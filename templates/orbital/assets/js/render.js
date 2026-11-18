@@ -25,5 +25,13 @@
   }
   function ledgerHead(){ return `<div class="lg-head label"><span>No.</span><span>Task · model · duration</span><span class="h-steps">Steps — width = cost</span><span style="text-align:right">Cost</span><span class="h-st" style="text-align:right">Status</span></div>`; }
   const mark = (name, color, sm) => `<span class="mark${sm?' mark--sm':''}" style="--c:${color||'transparent'}" aria-hidden="true">${JV.esc(name.replace(/^Jarvis Local · /,'').trim()[0].toUpperCase())}</span>`;
+  /* a step label that does not fit its pill is hidden instead of being cut mid-word (the name stays in the tooltip) */
+  const fitRow = row => row.querySelectorAll('.step').forEach(s => { s.classList.remove('is-tight'); if(s.scrollWidth > s.clientWidth + 1) s.classList.add('is-tight'); });
+  const ro = typeof ResizeObserver === 'function' ? new ResizeObserver(es => es.forEach(e => fitRow(e.target))) : null;
+  const watch = () => document.querySelectorAll('.steps').forEach(r => { fitRow(r); ro && ro.observe(r); });
+  let queued = false;
+  new MutationObserver(() => { if(queued) return; queued = true; requestAnimationFrame(() => { queued = false; watch(); }); }).observe(document.documentElement, { childList:true, subtree:true });
+  if(document.fonts && document.fonts.ready) document.fonts.ready.then(watch);
+  addEventListener('load', watch);
   JV.r = { st, steps, ledgerRow, ledgerHead, mark };
 })();
