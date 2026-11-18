@@ -6,6 +6,7 @@
 .orbbox{position:relative;width:100%;max-width:560px;aspect-ratio:1;margin:auto 0}
 .orbbox .orb{position:absolute;inset:0}
 .wave{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.orbcol .page-h em{white-space:nowrap}
 .mode{display:flex;flex-direction:column;align-items:center;gap:10px;margin-bottom:24px}
 .mode .st{font:600 22px/1 var(--sans);letter-spacing:-.02em}
 .mode .st em{font:italic 400 26px/1 var(--serif);color:var(--ink-2)}
@@ -19,13 +20,14 @@
 .msg.me .mt{color:rgba(11,10,18,.5)}
 .msg pre{margin-top:8px;padding:10px 12px;border-radius:12px;background:rgba(5,4,10,.55);font:500 12px/1.55 var(--mono);color:var(--ink-2);white-space:pre-wrap}
 .msg pre .k{color:#B7A4FF}.msg pre .s{color:#FFC48A}
-.composer{margin-top:16px}
+.composer{container:cmp/inline-size;margin-top:16px}
+@container cmp (max-width:400px){.composer .meter{display:none}}
 .composer .ask{height:76px}
 .composer .ask-in{font-size:16px}
 .mic{width:52px;height:52px;border-radius:50%;display:grid;place-items:center;color:#fff;background:var(--grad-core);box-shadow:0 0 22px rgba(168,151,255,.6);flex:none}
 .send{height:52px;width:52px;padding:0}
 .meter{display:flex;align-items:flex-end;gap:3px;height:34px}.meter i{width:4px;border-radius:2px;background:linear-gradient(var(--au-pink),var(--au-violet))}
-@media (max-width:1599px){.lc{grid-template-columns:minmax(260px,380px) minmax(0,1fr);gap:24px}}
+@media (max-width:1599px){.lc{grid-template-columns:minmax(220px,280px) minmax(0,1fr);gap:24px}}
 @media (max-width:1100px){
  .lc{display:block;height:auto}
  .orbcol{display:grid;grid-template-columns:240px 1fr;grid-template-areas:"h h" "o m";align-items:center;gap:0 24px}
