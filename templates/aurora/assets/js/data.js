@@ -53,5 +53,25 @@ const DATA={
  ]
 };
 /* page routing used by the wheel, dock, radial menu and ⌘K */
-DATA.pages={overview:'overview.html',tasks:'tasks.html',ops:null,chat:'local-chat.html',ft:'fine-tuning.html',sched:'scheduled.html',memory:'memory.html',integrations:'integrations.html',audit:'audit.html'};
+DATA.pages={overview:'overview.html',tasks:'tasks.html',ops:'operations.html',chat:'local-chat.html',ft:'fine-tuning.html',sched:'scheduled.html',memory:'memory.html',integrations:'integrations.html',audit:'audit.html'};
 DATA.dock=['overview','tasks','chat','integrations'];
+
+/* Operations — demo queue, workers and errors (the window switch only slices the throughput series) */
+DATA.ops={
+ throughput:[3,5,2,6,4,8,5,9,7,11,6,12,9,14,10,13,8,12,15,11,9,13,16,14],
+ fails:[0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0],
+ queue:[
+  ['OP-2281','correlate','T-0218','claude-sonnet-4.5','run','38s',.00483],
+  ['OP-2282','rollout · wave 3','T-0217','qwen3-coder-30b · local','run','6m 50s',.00854],
+  ['OP-2283','report','T-0218','claude-sonnet-4.5','wait','—',0],
+  ['OP-2284','simulate_load','S-06','mistral-large','wait','02:30',0],
+  ['OP-2285','pg_basebackup','S-02','qwen3-4b · local','wait','03:00',0]
+ ],
+ workers:[
+  ['cloud-router',.62,'7 models · p95 840 ms'],
+  ['local · qwen3-4b',.18,'41.7 tok/s · 4.1 GB VRAM'],
+  ['local · qwen3-coder-30b',.54,'rollout agent · 19 GB unified'],
+  ['runpod · A40',.91,'fine-tune ft-0009']
+ ],
+ errors:[['apply_patch','admission webhook denied · checkout-svc','21:02'],['deploy_certs','edge-17 stale config lock → retry','23:58']]
+};
