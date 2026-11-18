@@ -1,0 +1,61 @@
+name: 🎨 Design feedback
+description: Tell us what works, what does not and what you would change visually.
+title: "[Design]: "
+labels: ["design-feedback"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Honest feedback is the reason this repository is public. Short or long, all opinions are welcome.
+  - type: dropdown
+    id: template
+    attributes:
+      label: Template
+      options:
+        - JARVIS Aurora
+        - JARVIS Orbital
+        - Both
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      multiple: true
+      options:
+        - Overall look and feel
+        - Navigation (wheel, dock, orbit dial)
+        - Typography
+        - Colour and contrast
+        - Motion and 3D
+        - Mobile layout
+        - Readability of data
+        - A specific page
+    validations:
+      required: true
+  - type: dropdown
+    id: rating
+    attributes:
+      label: First impression
+      options:
+        - 5 — love it
+        - 4 — good
+        - 3 — okay
+        - 2 — not for me
+        - 1 — does not work
+  - type: textarea
+    id: works
+    attributes:
+      label: What works well?
+  - type: textarea
+    id: change
+    attributes:
+      label: What would you change?
+      description: Point to a page or attach a screenshot if you can.
+    validations:
+      required: true
+  - type: input
+    id: device
+    attributes:
+      label: Device and browser
+      placeholder: MacBook Pro 14", Chrome · iPhone 15, Safari

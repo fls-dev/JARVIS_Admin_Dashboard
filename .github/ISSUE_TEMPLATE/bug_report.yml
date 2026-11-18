@@ -1,0 +1,75 @@
+name: 🐞 Bug report
+description: Something looks broken or behaves wrong in one of the templates.
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report a bug. A screenshot and the screen width help a lot.
+  - type: dropdown
+    id: template
+    attributes:
+      label: Template
+      options:
+        - JARVIS Aurora
+        - JARVIS Orbital
+        - Landing page
+        - Both / not sure
+    validations:
+      required: true
+  - type: input
+    id: page
+    attributes:
+      label: Page
+      description: Which page or URL? For example `templates/orbital/tasks.html`.
+      placeholder: templates/aurora/overview.html
+    validations:
+      required: true
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: What did you expect, and what did you see instead?
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Open …
+        2. Resize to 768 px
+        3. Press G …
+  - type: input
+    id: browser
+    attributes:
+      label: Browser and OS
+      placeholder: Safari 18 on iOS 18, Chrome 131 on Windows 11
+    validations:
+      required: true
+  - type: input
+    id: viewport
+    attributes:
+      label: Screen width
+      placeholder: 390 px / 1440 px
+  - type: dropdown
+    id: opened-from
+    attributes:
+      label: How did you open it?
+      options:
+        - Live demo (GitHub Pages)
+        - Local server
+        - Directly from disk (file://)
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots or console output
+      description: Drag images here. Paste console errors as text.
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checks
+      options:
+        - label: I searched existing issues and this is not a duplicate.
+          required: true

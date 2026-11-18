@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 💬 Questions and ideas
+    url: https://github.com/fls-dev/JARVIS_Admin_Dashboard/discussions
+    about: Ask a question or share what you built in GitHub Discussions.
+  - name: 🔒 Report a security issue
+    url: https://github.com/fls-dev/JARVIS_Admin_Dashboard/security/advisories/new
+    about: Please report vulnerabilities privately, not in a public issue.
