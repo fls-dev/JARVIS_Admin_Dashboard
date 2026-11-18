@@ -96,7 +96,8 @@ kbd{font:500 11px/1 var(--mono);padding:4px 6px;border-radius:6px;background:rgb
 .panel-h{display:flex;align-items:center;gap:10px;margin-bottom:14px}
 .panel-h h3{font:var(--t-h3)}
 .panel-h .meta{margin-left:auto;font:500 11.5px/1 var(--mono);color:var(--ink-3)}
-.inspector{position:fixed;right:24px;top:var(--top-h);bottom:24px;width:var(--ins-w);z-index:40;border-radius:var(--r-xl);padding:22px 24px;display:flex;flex-direction:column;animation:ins-in .55s var(--ease)}
+.inspector{position:fixed;right:24px;top:var(--top-h);bottom:24px;width:var(--ins-w);z-index:40;border-radius:var(--r-xl);padding:22px 24px;display:flex;flex-direction:column;overflow-y:auto;scrollbar-width:none;animation:ins-in .55s var(--ease)}
+.inspector::-webkit-scrollbar{display:none}
 @keyframes ins-in{from{transform:translateX(36px);opacity:0}}
 .ins-h{display:flex;align-items:center;gap:14px}
 .ins-h .logo{width:52px;height:52px;border-radius:16px;display:grid;place-items:center;font:700 18px/1 var(--sans);flex:none}
