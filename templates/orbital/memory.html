@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en" data-page="memory">
+<head>
+<meta charset="utf-8">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><defs><radialGradient id='g' cx='.38' cy='.32' r='.7'><stop offset='0' stop-color='%23fff'/><stop offset='.35' stop-color='%238BE9FF'/><stop offset='1' stop-color='%231B2A6B'/></radialGradient></defs><rect width='64' height='64' rx='16' fill='%2305060C'/><circle cx='32' cy='32' r='19' fill='url(%23g)'/></svg>">
+<meta name="author" content="fls-dev — https://github.com/fls-dev">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Memory · JARVIS Orbital</title>
+<meta name="description" content="JARVIS Orbital · Memory">
+<meta name="theme-color" content="#03050D">
+<link rel="stylesheet" href="assets/css/tokens.css">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<link rel="stylesheet" href="assets/css/pages.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="sky" aria-hidden="true"></div>
+<canvas id="scene" aria-hidden="true"></canvas>
+<div class="planet-css" aria-hidden="true"></div>
+<div data-jv-nav></div>
+<main id="main" class="page page--memory">
+<header class="phead mem-head">
+  <div class="rise" style="--i:0">
+    <div class="kicker"><span class="label">Room 07 · Memory</span><span class="label">vector + graph · 2 148 items</span></div>
+    <h1>Long-term <em class="grad">memory</em></h1>
+    <p>Runbooks, hosts, policies and facts JARVIS learned from finished tasks. Every item links back to the task that taught it.</p>
+  </div>
+  <div class="mem-total rise" style="--i:1"><span class="t-num gnum">2 148</span><span class="label">items · 38 learned today</span></div>
+</header>
+
+<div class="grid mem">
+  <section class="win c-12 rise" style="--i:2" aria-labelledby="mk-h">
+    <div class="win-h"><h2 id="mk-h" class="sr-only">Filter memory</h2>
+      <div class="row" data-chipgroup id="mem-k" role="group" aria-label="Kind" style="flex:1"></div>
+      <div class="search" style="width:min(340px,100%)"><i data-ico="search" class="icon icon--sm"></i><label class="sr-only" for="mq">Recall</label><input id="mq" class="input" type="search" placeholder="Recall: tls, edge-17, postgres…"></div>
+    </div>
+    <div class="mem-bar" id="mem-bar" aria-hidden="true"></div>
+  </section>
+  <div class="c-12 cards mem-cards" id="mem-items"></div>
+</div>
+</main>
+<script src="assets/js/vendor/three.min.js"></script>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/core.js"></script>
+<script src="assets/js/motion.js"></script>
+<script src="assets/js/scene.js"></script>
+<script src="assets/js/nav.js"></script>
+<script src="assets/js/render.js"></script>
+<script src="assets/js/charts.js"></script>
+<script src="assets/js/drawer.js"></script>
+<script src="assets/js/toast.js"></script>
+<script src="assets/js/cmdk.js"></script>
+<script src="assets/js/live.js"></script>
+<script src="assets/js/tabs.js"></script>
+<script src="assets/js/parallax.js"></script>
+<script src="assets/js/pages/memory.js"></script>
+</body>
+</html>

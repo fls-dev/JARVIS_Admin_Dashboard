@@ -1,0 +1,54 @@
+/* JARVIS Orbital · by fls-dev · https://github.com/fls-dev */
+/* JARVIS Orbital — design tokens.
+   Twilight space: deep navy night, a dawn horizon (sun/coral), ice-blue signal. Glass is the material for every window. */
+@import url("fonts.css");
+:root{
+  color-scheme: dark;
+  /* space */
+  --space:   #03050D;
+  --night:   #070C22;
+  --dusk:    #151236;
+  --horizon: #FF9A5C;   /* dawn glow behind the core */
+  /* ink (on glass over night) */
+  --fg:   #F3F7FF;
+  --fg-2: rgba(226,234,255,.76);
+  --fg-3: rgba(210,222,255,.60);
+  --fg-4: rgba(200,214,255,.30);   /* decoration only */
+  /* signal */
+  --ice:    #8BE9FF;  --ice-2:#4CC9FF;  --ice-soft:rgba(139,233,255,.14); --ice-line:rgba(139,233,255,.45);
+  --sun:    #FFB36B;  --sun-2:#FF8A5C;  --sun-soft:rgba(255,179,107,.14);
+  --violet: #A99BFF;
+  --grad-signal: linear-gradient(100deg, #B8F3FF 0%, #8BE9FF 35%, #FFD3A8 75%, #FFB36B 100%);
+  --grad-num:    linear-gradient(180deg, #FFFFFF 0%, #CFEFFF 55%, #9FD8FF 100%);
+  /* status (always with a label) */
+  --ok:#6CF0C2; --warn:#FFC857; --err:#FF6B81; --err-soft:rgba(255,107,129,.14); --warn-soft:rgba(255,200,87,.14); --ok-soft:rgba(108,240,194,.12);
+  /* glass materials (visionOS-like: bright rim, deep blur) */
+  --glass-1: rgba(160,190,255,.06);      /* chips, rows */
+  --glass-2: rgba(16,22,48,.46);         /* windows */
+  --glass-3: rgba(14,18,40,.72);         /* overlays: ⌘K, drawer, sheet */
+  --glass-rim: rgba(255,255,255,.14);
+  --glass-rim-2: rgba(255,255,255,.24);
+  --glass-hi: inset 0 1px 0 rgba(255,255,255,.18), inset 0 0 0 1px rgba(255,255,255,.04), inset 0 -20px 40px -30px rgba(139,233,255,.25);
+  --glass-shadow: 0 30px 80px -30px rgba(0,0,0,.75), 0 10px 30px -15px rgba(3,6,20,.6);
+  --blur: saturate(180%) blur(28px);
+  --blur-strong: saturate(180%) blur(44px);
+  /* type */
+  --f-sans: "Sora", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --f-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --t-hero: clamp(2.5rem, 1.4rem + 3.6vw, 5.25rem);
+  --t-num:  clamp(3rem, 1.6rem + 5vw, 7.5rem);
+  --t-xl:   clamp(1.75rem, 1.2rem + 1.6vw, 2.75rem);
+  --t-lg:   clamp(1.25rem, 1.05rem + .6vw, 1.625rem);
+  --t-md:   1.0625rem; --t-base: .9375rem; --t-sm: .8125rem; --t-xs: .6875rem;
+  /* space & shape */
+  --s-1:4px; --s-2:8px; --s-3:12px; --s-4:16px; --s-5:24px; --s-6:32px; --s-7:48px; --s-8:64px; --s-9:96px;
+  --gutter: clamp(14px, 2.4vw, 40px); --gap: clamp(12px, 1.3vw, 22px);
+  --r-1:10px; --r-2:16px; --r-3:24px; --r-win:30px; --r-pill:999px;
+  /* motion */
+  --ease: cubic-bezier(.2,.8,.2,1); --ease-out: cubic-bezier(.16,1,.3,1); --spring: cubic-bezier(.3,1.4,.4,1);
+  --d-1:120ms; --d-2:220ms; --d-3:380ms; --d-4:620ms;
+  /* layout */
+  --top-h: 76px; --pill-h: 64px; --tap: 44px;
+  --z-scene:0; --z-page:2; --z-top:40; --z-pill:50; --z-drawer:80; --z-cmdk:90; --z-toast:95;
+}
+@media (max-width:767px){ :root{ --top-h:64px; --pill-h:60px; --r-win:24px; } }

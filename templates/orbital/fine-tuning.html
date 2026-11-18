@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en" data-page="fine-tuning">
+<head>
+<meta charset="utf-8">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><defs><radialGradient id='g' cx='.38' cy='.32' r='.7'><stop offset='0' stop-color='%23fff'/><stop offset='.35' stop-color='%238BE9FF'/><stop offset='1' stop-color='%231B2A6B'/></radialGradient></defs><rect width='64' height='64' rx='16' fill='%2305060C'/><circle cx='32' cy='32' r='19' fill='url(%23g)'/></svg>">
+<meta name="author" content="fls-dev — https://github.com/fls-dev">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Fine-tuning · JARVIS Orbital</title>
+<meta name="description" content="JARVIS Orbital · Fine-tuning">
+<meta name="theme-color" content="#03050D">
+<link rel="stylesheet" href="assets/css/tokens.css">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<link rel="stylesheet" href="assets/css/pages.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="sky" aria-hidden="true"></div>
+<canvas id="scene" aria-hidden="true"></canvas>
+<div class="planet-css" aria-hidden="true"></div>
+<div data-jv-nav></div>
+<main id="main" class="page page--fine-tuning">
+<header class="phead">
+  <div class="rise" style="--i:0">
+    <div class="kicker"><span class="label">Room 05 · Fine-tuning</span><span class="st st--live">ft-0009 training</span></div>
+    <h1>Fine-<em class="grad">tuning</em></h1>
+    <p>Teach the local model your runbooks. LoRA adapters train on RunPod and swap into Jarvis Local without a restart.</p>
+  </div>
+  <div class="phead-actions rise" style="--i:1">
+    <button class="btn" data-toast="Dataset upload|Drop JSONL files into the window"><i data-ico="download" class="icon icon--sm"></i> Import dataset</button>
+    <button class="btn btn--primary" data-toast="New run drafted|Pick a dataset and a base model"><i data-ico="plus" class="icon icon--sm"></i> New run</button>
+  </div>
+</header>
+
+<div class="grid ft">
+  <section class="win win--hi c-8 l-c-12 rise" style="--i:2" data-depth=".15" aria-labelledby="run-h">
+    <div class="win-h"><h2 id="run-h"><span class="ico"><i data-ico="fine-tuning" class="icon icon--sm"></i></span><span id="ft-name">jarvis-sre-runbooks-r3</span></h2><div class="row"><span class="st st--live">Training</span><button class="btn btn--sm btn--danger" data-toast="Run stopped|ft-0009 · checkpoint saved at step 1840|warn">Stop</button></div></div>
+    <div class="ft-top">
+      <div class="ft-ring" id="ft-ring" role="img" aria-label="Progress 67 percent"><svg viewBox="0 0 120 120"><defs><linearGradient id="ftg" x1="0" x2="1"><stop offset="0" stop-color="#4CC9FF"/><stop offset="1" stop-color="#FFB36B"/></linearGradient></defs><circle cx="60" cy="60" r="52" class="ft-ring-bg"/><circle cx="60" cy="60" r="52" class="ft-ring-fg" style="--p:.667"/></svg><div class="ft-ring-v"><span class="kpi-v">67<small>%</small></span><span class="label">epoch 2 / 3</span></div></div>
+      <div class="kpis" style="--n:3">
+        <div class="kpi"><span class="label">Step</span><span class="kpi-v kpi-v--sm">1 840<small>/ 2 760</small></span><span class="kpi-d">ETA 14 min</span></div>
+        <div class="kpi kpi--ice"><span class="label">Train loss</span><span class="kpi-v kpi-v--sm">1.08</span><span class="kpi-d"><span class="up">▼ 55%</span> from 2.41</span></div>
+        <div class="kpi kpi--sun"><span class="label">Cost so far</span><span class="kpi-v kpi-v--sm">$1.84</span><span class="kpi-d">A40 · $0.79/h</span></div>
+      </div>
+    </div>
+    <div class="row between" style="margin:20px 0 8px"><span class="label">Loss · train vs eval</span><div class="legend"><span><i style="background:var(--ice)"></i>train</span><span><i style="background:var(--sun)"></i>eval</span></div></div>
+    <div id="ft-loss"></div>
+  </section>
+  <section class="win c-4 l-c-6 m-c-12 rise" style="--i:3" data-depth=".25" aria-labelledby="cfg-h">
+    <div class="win-h"><h2 id="cfg-h"><span class="ico sun"><i data-ico="key" class="icon icon--sm"></i></span>Run config</h2></div>
+    <dl class="dl" id="ft-cfg"></dl>
+    <div class="pane" style="margin-top:20px"><div class="field"><label for="lr">Learning rate <span class="mono dim">2e-4</span></label><input id="lr" class="range" type="range" min="1" max="10" value="4"></div>
+    <label class="switch" style="margin-top:6px"><input type="checkbox" checked><span class="track"></span>Early stopping</label></div>
+  </section>
+  <section class="win c-12 l-c-6 m-c-12 rise" style="--i:4" aria-labelledby="ds-h">
+    <div class="win-h"><h2 id="ds-h"><span class="ico"><i data-ico="memory" class="icon icon--sm"></i></span>Datasets</h2><span class="label">3 · 5.4M tokens</span></div>
+    <div class="ds" id="ft-ds"></div>
+  </section>
+  <section class="win c-8 l-c-12 rise" style="--i:5" aria-labelledby="runs-h">
+    <div class="win-h"><h2 id="runs-h"><span class="ico"><i data-ico="layers" class="icon icon--sm"></i></span>Runs</h2></div>
+    <table class="dtable"><thead><tr><th>Run</th><th class="r">Loss</th><th class="r">Eval</th><th class="r">Cost</th><th>Started</th><th>Status</th></tr></thead><tbody id="ft-runs"></tbody></table>
+  </section>
+  <section class="win c-4 l-c-12 rise" style="--i:6" aria-labelledby="ad-h">
+    <div class="win-h"><h2 id="ad-h"><span class="ico sun"><i data-ico="bolt" class="icon icon--sm"></i></span>Adapters</h2></div>
+    <ul class="adapters" id="ft-ad"></ul>
+  </section>
+</div>
+</main>
+<script src="assets/js/vendor/three.min.js"></script>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/core.js"></script>
+<script src="assets/js/motion.js"></script>
+<script src="assets/js/scene.js"></script>
+<script src="assets/js/nav.js"></script>
+<script src="assets/js/render.js"></script>
+<script src="assets/js/charts.js"></script>
+<script src="assets/js/drawer.js"></script>
+<script src="assets/js/toast.js"></script>
+<script src="assets/js/cmdk.js"></script>
+<script src="assets/js/live.js"></script>
+<script src="assets/js/tabs.js"></script>
+<script src="assets/js/parallax.js"></script>
+<script src="assets/js/pages/fine-tuning.js"></script>
+</body>
+</html>

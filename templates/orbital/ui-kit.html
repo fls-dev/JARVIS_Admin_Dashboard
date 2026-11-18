@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en" data-page="ui-kit">
+<head>
+<meta charset="utf-8">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><defs><radialGradient id='g' cx='.38' cy='.32' r='.7'><stop offset='0' stop-color='%23fff'/><stop offset='.35' stop-color='%238BE9FF'/><stop offset='1' stop-color='%231B2A6B'/></radialGradient></defs><rect width='64' height='64' rx='16' fill='%2305060C'/><circle cx='32' cy='32' r='19' fill='url(%23g)'/></svg>">
+<meta name="author" content="fls-dev — https://github.com/fls-dev">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>UI kit · JARVIS Orbital</title>
+<meta name="description" content="JARVIS Orbital · UI kit">
+<meta name="theme-color" content="#03050D">
+<link rel="stylesheet" href="assets/css/tokens.css">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<link rel="stylesheet" href="assets/css/pages.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="sky" aria-hidden="true"></div>
+<canvas id="scene" aria-hidden="true"></canvas>
+<div class="planet-css" aria-hidden="true"></div>
+<div data-jv-nav></div>
+<main id="main" class="page page--ui-kit">
+<header class="phead">
+  <div class="rise" style="--i:0">
+    <div class="kicker"><span class="label">UI kit · Orbital</span><span class="label">tokens.css · components.css</span></div>
+    <h1>UI <em class="grad">kit</em></h1>
+    <p>Every building block of the deck with its states. Copy markup straight from here; all of it is plain HTML plus a class.</p>
+  </div>
+  <div class="phead-actions rise" style="--i:1">
+    <div class="seg" role="group" aria-label="Core state" data-chipgroup id="core-st"><button aria-pressed="true" data-v="idle">Idle</button><button aria-pressed="false" data-v="think">Think</button><button aria-pressed="false" data-v="speak">Speak</button></div>
+  </div>
+</header>
+
+<div class="grid kit">
+  <section class="win c-6 l-c-12" aria-labelledby="k-col"><div class="win-h"><h2 id="k-col">Colour</h2><span class="label">--ice · --sun · status</span></div>
+    <div class="swatches">
+      <span style="--c:#03050D"><b>space</b>#03050D</span><span style="--c:#151236"><b>dusk</b>#151236</span><span class="lt" style="--c:#8BE9FF"><b>ice</b>#8BE9FF</span><span class="lt" style="--c:#4CC9FF"><b>ice-2</b>#4CC9FF</span>
+      <span class="lt" style="--c:#FFB36B"><b>sun</b>#FFB36B</span><span class="lt" style="--c:#FF8A5C"><b>coral</b>#FF8A5C</span><span class="lt" style="--c:#A99BFF"><b>violet</b>#A99BFF</span><span class="lt" style="--c:#6CF0C2"><b>ok</b>#6CF0C2</span>
+      <span class="lt" style="--c:#FFC857"><b>warn</b>#FFC857</span><span class="lt" style="--c:#FF6B81"><b>err</b>#FF6B81</span><span style="--c:rgba(16,22,48,.46)"><b>glass-2</b>window</span><span style="--c:rgba(14,18,40,.72)"><b>glass-3</b>overlay</span>
+    </div></section>
+  <section class="win c-6 l-c-12" aria-labelledby="k-type"><div class="win-h"><h2 id="k-type">Type</h2><span class="label">Sora · IBM Plex Mono</span></div>
+    <div class="stack"><div class="t-hero" style="font-weight:200">Orbital 200</div><div class="t-xl">Headline · t-xl 400</div><div class="t-lg">Title · t-lg 500</div><p>Body 15 px · Sora 400 · readable on glass over night sky.</p><div class="mono">mono · gateway-eu-west · p95 1.84 s</div><div class="label">label · uppercase mono</div><div class="t-num gnum">$0.0912</div></div></section>
+
+  <section class="win c-6 l-c-12" aria-labelledby="k-btn"><div class="win-h"><h2 id="k-btn">Buttons</h2></div>
+    <div class="row"><button class="btn btn--primary">Primary</button><button class="btn btn--sun">Sun</button><button class="btn">Glass</button><button class="btn btn--ghost">Ghost</button><button class="btn btn--danger">Danger</button></div>
+    <div class="row" style="margin-top:12px"><button class="btn btn--sm">Small</button><button class="btn btn--lg">Large</button><button class="btn btn--icon" aria-label="Add"><i data-ico="plus" class="icon icon--sm"></i></button><button class="btn is-loading">Loading</button><button class="btn" disabled>Disabled</button></div></section>
+  <section class="win c-6 l-c-12" aria-labelledby="k-st"><div class="win-h"><h2 id="k-st">Status &amp; chips</h2></div>
+    <div class="row"><span class="st st--live">Live</span><span class="st st--ok">Done</span><span class="st st--warn">Warn</span><span class="st st--err">Failed</span><span class="st st--off">Queued</span><span class="kbd">⌘K</span></div>
+    <div class="row" data-chipgroup="multi" id="kit-chips" style="margin-top:12px"><button class="chip" aria-pressed="true">security <b>5</b></button><button class="chip" aria-pressed="false">incident</button><button class="chip" aria-pressed="false">k8s</button><span class="chip">static chip</span></div></section>
+
+  <section class="win c-6 l-c-12" aria-labelledby="k-f"><div class="win-h"><h2 id="k-f">Fields</h2></div>
+    <div class="stack">
+      <div class="field"><label for="k1">Host</label><input id="k1" class="input" placeholder="edge-17.example.com"><span class="hint">Hint text sits under the field.</span></div>
+      <div class="field"><label for="k2">Chat ID</label><input id="k2" class="input input--mono" value="43697531x" aria-invalid="true"><span class="error-msg">Use digits only.</span></div>
+      <div class="field"><label for="k3">Region</label><select id="k3" class="select"><option>eu-west-1</option><option>eu-central-1</option></select></div>
+      <div class="search"><i data-ico="search" class="icon icon--sm"></i><label class="sr-only" for="k4">Search</label><input id="k4" class="input" type="search" placeholder="Search"></div>
+      <textarea class="textarea" aria-label="Notes" placeholder="Textarea"></textarea>
+    </div></section>
+  <section class="win c-6 l-c-12" aria-labelledby="k-c"><div class="win-h"><h2 id="k-c">Controls</h2></div>
+    <div class="stack">
+      <label class="switch"><input type="checkbox" checked><span class="track"></span>Switch on</label>
+      <label class="switch"><input type="checkbox"><span class="track"></span>Switch off</label>
+      <label class="check"><input type="checkbox" checked> Checkbox</label>
+      <div class="tabs" role="tablist" data-tabs="kit"><button class="tab" role="tab" data-tab="a" aria-selected="true">Tab one <span class="count">12</span></button><button class="tab" role="tab" data-tab="b" aria-selected="false">Tab two</button><button class="tab" role="tab" data-tab="c" aria-selected="false">Three</button></div>
+      <div class="seg" role="group" data-chipgroup id="kit-seg"><button aria-pressed="false">1 h</button><button aria-pressed="true">24 h</button><button aria-pressed="false">7 d</button></div>
+      <input class="range" type="range" aria-label="Range">
+    </div></section>
+
+  <section class="win win--hi c-5 l-c-12" aria-labelledby="k-n"><div class="win-h"><h2 id="k-n">Numbers &amp; meters</h2></div>
+    <div class="money" data-live="spend">$0.091264</div>
+    <div class="kpis" style="--n:3;margin-top:20px"><div class="kpi kpi--ice"><span class="label">Running</span><span class="kpi-v">02</span></div><div class="kpi"><span class="label">p95</span><span class="kpi-v">840<small>ms</small></span></div><div class="kpi kpi--err"><span class="label">Failed</span><span class="kpi-v">01</span></div></div>
+    <div class="meter" style="--v:62%;margin-top:20px"><i></i></div><div class="meter meter--warn" style="--v:88%;margin-top:12px"><i></i></div>
+    <div id="kit-chart" style="margin-top:20px"></div></section>
+  <section class="win c-7 l-c-12" aria-labelledby="k-l"><div class="win-h"><h2 id="k-l">Ledger &amp; feed</h2></div>
+    <div id="kit-ledger"></div><ul class="feed" id="kit-feed" style="margin-top:16px"></ul></section>
+
+  <section class="win c-12" aria-labelledby="k-t"><div class="win-h"><h2 id="k-t">Table → cards on mobile</h2></div>
+    <table class="dtable"><thead><tr><th>Connection</th><th class="r">Calls</th><th class="r">Spend</th><th>Status</th></tr></thead><tbody id="kit-table"></tbody></table></section>
+
+  <div class="c-12 cards" id="kit-cards"></div>
+
+  <section class="win c-6 l-c-12" aria-labelledby="k-o"><div class="win-h"><h2 id="k-o">Overlays</h2></div>
+    <div class="row"><button class="btn" id="kit-drawer">Open drawer</button><button class="btn" data-cmdk>Command palette</button><button class="btn" data-toast="Saved|Toast with a subline">Toast</button><button class="btn" data-toast="Rate limit|Brave Search · retry in 1 s|err">Error toast</button><button class="btn" onclick="JV.orbit.open()">Orbit dial</button></div></section>
+  <section class="win c-6 l-c-12" aria-labelledby="k-e"><div class="win-h"><h2 id="k-e">Empty &amp; loading</h2></div>
+    <div class="empty"><div class="t-lg">No tasks yet</div><p>Ask JARVIS for something to start the ledger.</p></div>
+    <div class="stack" style="margin-top:16px"><div class="skel" style="height:16px;width:60%"></div><div class="skel" style="height:16px"></div><div class="skel" style="height:16px;width:80%"></div></div></section>
+  <section class="win c-12 kit-hud" aria-labelledby="k-h"><div class="win-h"><h2 id="k-h">HUD tags</h2><span class="label">pinned around the core</span></div>
+    <div class="row" style="gap:28px"><span class="hud" style="position:relative"><span class="pip"><i></i></span><b>postgres-main</b><span class="mono">restore ✓</span></span><span class="hud is-sun" style="position:relative"><span class="pip"><i></i></span><b>nginx fleet</b><span class="mono">14/24</span></span><span class="hud is-err" style="position:relative"><span class="pip"><i></i></span><b>gateway-eu-west</b><span class="mono">p95 1.84 s</span></span></div></section>
+</div>
+<footer class="by"><span>JARVIS Orbital</span> · by <a href="https://github.com/fls-dev" target="_blank" rel="noopener">fls-dev</a></footer>
+</main>
+<script src="assets/js/vendor/three.min.js"></script>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/core.js"></script>
+<script src="assets/js/motion.js"></script>
+<script src="assets/js/scene.js"></script>
+<script src="assets/js/nav.js"></script>
+<script src="assets/js/render.js"></script>
+<script src="assets/js/charts.js"></script>
+<script src="assets/js/drawer.js"></script>
+<script src="assets/js/toast.js"></script>
+<script src="assets/js/cmdk.js"></script>
+<script src="assets/js/live.js"></script>
+<script src="assets/js/tabs.js"></script>
+<script src="assets/js/parallax.js"></script>
+<script src="assets/js/pages/ui-kit.js"></script>
+</body>
+</html>

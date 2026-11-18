@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en" data-page="overview">
+<head>
+<meta charset="utf-8">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><defs><radialGradient id='g' cx='.38' cy='.32' r='.7'><stop offset='0' stop-color='%23fff'/><stop offset='.35' stop-color='%238BE9FF'/><stop offset='1' stop-color='%231B2A6B'/></radialGradient></defs><rect width='64' height='64' rx='16' fill='%2305060C'/><circle cx='32' cy='32' r='19' fill='url(%23g)'/></svg>">
+<meta name="author" content="fls-dev — https://github.com/fls-dev">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Overview · JARVIS Orbital</title>
+<meta name="description" content="JARVIS Orbital · Overview">
+<meta name="theme-color" content="#03050D">
+<link rel="stylesheet" href="assets/css/tokens.css">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<link rel="stylesheet" href="assets/css/pages.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="sky" aria-hidden="true"></div>
+<canvas id="scene" aria-hidden="true"></canvas>
+<div class="planet-css" aria-hidden="true"></div>
+<div data-jv-nav></div>
+<main id="main" class="page page--overview">
+<section class="hero" aria-labelledby="hero-t">
+  <div class="hero-l">
+    <div class="kicker rise" style="--i:0"><span class="st st--live">Core online</span><span class="label">Room 01 · Overview · <span data-clock>00:00</span> CET</span></div>
+    <h1 id="hero-t" class="hero-t rise" style="--i:1">Good night, Alex.<br><span class="grad">2 runs in orbit.</span></h1>
+    <p class="hero-p rise" style="--i:2">Latency on <span class="mono">gateway-eu-west</span> is being traced and the nginx CVE patch is on wave 3 of 3. TLS, backups and IAM are green.</p>
+    <form id="compose" class="composer rise" style="--i:3" aria-label="Ask JARVIS">
+      <label class="sr-only" for="req">Describe a task</label>
+      <textarea id="req" class="composer-in" rows="2" placeholder="Describe a task: rotate certs, trace a spike, harden a host…"></textarea>
+      <div class="composer-bar">
+        <div class="composer-chips" data-chipgroup id="presets" aria-label="Suggestions">
+          <button type="button" class="chip" aria-pressed="false" data-v="Rotate TLS certificates for *.example.com">Rotate certs</button>
+          <button type="button" class="chip" aria-pressed="false" data-v="Why is p95 high on gateway-eu-west?">Trace p95</button>
+          <button type="button" class="chip hide-s" aria-pressed="false" data-v="Write the postmortem PDF for INC-0412">Postmortem</button>
+        </div>
+        <button type="button" class="btn btn--icon" id="mic" aria-label="Dictate"><i data-ico="mic" class="icon icon--sm"></i></button>
+        <button type="submit" class="btn btn--primary">Plan it <kbd class="kbd kbd--dark">⌘↵</kbd></button>
+      </div>
+    </form>
+  </div>
+  <div class="hero-r" aria-hidden="true">
+    <span class="hud is-err lead-l" style="--lead:70px;left:6%;top:16%"><span class="pip"><i></i></span><b>gateway-eu-west</b><span class="mono">p95 1.84 s</span></span>
+    <span class="hud is-sun lead-r" style="--lead:60px;right:4%;top:30%"><span class="pip"><i></i></span><b>nginx · CVE-2026-1182</b><span class="mono">14/24</span></span>
+    <span class="hud lead-l" style="--lead:80px;left:2%;bottom:24%"><span class="pip"><i></i></span><b>*.example.com</b><span class="mono">TLS renewed</span></span>
+    <span class="hud lead-r" style="--lead:50px;right:10%;bottom:12%"><span class="pip"><i></i></span><b>postgres-main</b><span class="mono">restore ✓</span></span>
+  </div>
+</section>
+
+<div class="grid ov">
+  <section class="win win--hi c-5 xl-c-6 m-c-12 rise" style="--i:4" data-depth=".25" aria-labelledby="sp-h">
+    <div class="win-h"><h2 id="sp-h"><span class="ico"><i data-ico="bolt" class="icon icon--sm"></i></span>Spend · today</h2><span class="st st--live">Live</span></div>
+    <div class="money" data-live="spend" aria-live="off">$0.091264</div>
+    <div class="row between ov-budget"><span class="label">Budget $0.50</span><span class="mono dim" data-live="budget">18%</span></div>
+    <div class="meter" data-live-bar><i></i></div>
+    <div class="kpis ov-kpis" style="--n:4">
+      <div class="kpi"><span class="label">Ops</span><span class="kpi-v kpi-v--sm" data-live="ops">17</span></div>
+      <div class="kpi kpi--ice"><span class="label">Running</span><span class="kpi-v kpi-v--sm" data-live="running">02</span></div>
+      <div class="kpi"><span class="label">Done</span><span class="kpi-v kpi-v--sm" data-live="completed">08</span></div>
+      <div class="kpi kpi--err"><span class="label">Failed</span><span class="kpi-v kpi-v--sm" data-live="failed">01</span></div>
+    </div>
+    <div class="label" style="margin:22px 0 10px">Cost per hour · 14 h</div>
+    <div id="trend"></div>
+  </section>
+
+  <section class="win c-7 xl-c-6 m-c-12 rise" style="--i:5" data-depth=".15" aria-labelledby="lg-h">
+    <div class="win-h"><h2 id="lg-h"><span class="ico"><i data-ico="tasks" class="icon icon--sm"></i></span>Live ledger</h2><a class="btn btn--sm" href="tasks.html">All tasks <i data-ico="arrow" class="icon icon--sm"></i></a></div>
+    <div id="ledger" class="ledger"></div>
+  </section>
+
+  <section class="win c-4 l-c-6 m-c-12 rise" style="--i:6" data-depth=".3" aria-labelledby="fl-h">
+    <div class="win-h"><h2 id="fl-h"><span class="ico sun"><i data-ico="server" class="icon icon--sm"></i></span>Fleet health</h2><span class="label">6 systems</span></div>
+    <ul class="fleet" id="fleet"></ul>
+  </section>
+
+  <section class="win c-4 l-c-6 m-c-12 rise" style="--i:7" data-depth=".2" aria-labelledby="fd-h">
+    <div class="win-h"><h2 id="fd-h"><span class="ico"><i data-ico="operations" class="icon icon--sm"></i></span>Telemetry</h2><span class="st st--live">Stream</span></div>
+    <ul class="feed" id="feed" data-feed data-max="7"></ul>
+  </section>
+
+  <section class="win c-4 l-c-12 rise" style="--i:8" data-depth=".3" aria-labelledby="md-h">
+    <div class="win-h"><h2 id="md-h"><span class="ico"><i data-ico="cpu" class="icon icon--sm"></i></span>Spend by model</h2><span class="label">6 models</span></div>
+    <div class="share" id="share"></div>
+    <ul class="share-list" id="share-list" style="margin-top:14px"></ul>
+  </section>
+
+  <section class="win win--thin c-6 m-c-12 rise" style="--i:9" aria-labelledby="nx-h">
+    <div class="win-h"><h2 id="nx-h"><span class="ico"><i data-ico="scheduled" class="icon icon--sm"></i></span>Next in orbit</h2><a class="btn btn--sm btn--ghost" href="scheduled.html">Timeline <i data-ico="arrow" class="icon icon--sm"></i></a></div>
+    <ul class="nextlist" id="ov-next"></ul>
+  </section>
+  <section class="win win--thin c-6 m-c-12 rise" style="--i:10" aria-labelledby="bi-h">
+    <div class="win-h"><h2 id="bi-h"><span class="ico"><i data-ico="integrations" class="icon icon--sm"></i></span>Busiest integrations</h2><a class="btn btn--sm btn--ghost" href="integrations.html">All 13 <i data-ico="arrow" class="icon icon--sm"></i></a></div>
+    <ul class="intlist" id="ov-int"></ul>
+  </section>
+</div>
+</main>
+<script src="assets/js/vendor/three.min.js"></script>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/core.js"></script>
+<script src="assets/js/motion.js"></script>
+<script src="assets/js/scene.js"></script>
+<script src="assets/js/nav.js"></script>
+<script src="assets/js/render.js"></script>
+<script src="assets/js/charts.js"></script>
+<script src="assets/js/drawer.js"></script>
+<script src="assets/js/toast.js"></script>
+<script src="assets/js/cmdk.js"></script>
+<script src="assets/js/live.js"></script>
+<script src="assets/js/tabs.js"></script>
+<script src="assets/js/parallax.js"></script>
+<script src="assets/js/pages/overview.js"></script>
+</body>
+</html>

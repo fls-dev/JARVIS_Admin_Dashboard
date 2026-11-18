@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en" data-page="tasks">
+<head>
+<meta charset="utf-8">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><defs><radialGradient id='g' cx='.38' cy='.32' r='.7'><stop offset='0' stop-color='%23fff'/><stop offset='.35' stop-color='%238BE9FF'/><stop offset='1' stop-color='%231B2A6B'/></radialGradient></defs><rect width='64' height='64' rx='16' fill='%2305060C'/><circle cx='32' cy='32' r='19' fill='url(%23g)'/></svg>">
+<meta name="author" content="fls-dev — https://github.com/fls-dev">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Tasks · JARVIS Orbital</title>
+<meta name="description" content="JARVIS Orbital · Tasks">
+<meta name="theme-color" content="#03050D">
+<link rel="stylesheet" href="assets/css/tokens.css">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<link rel="stylesheet" href="assets/css/pages.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="sky" aria-hidden="true"></div>
+<canvas id="scene" aria-hidden="true"></canvas>
+<div class="planet-css" aria-hidden="true"></div>
+<div data-jv-nav></div>
+<main id="main" class="page page--tasks">
+<header class="phead">
+  <div class="rise" style="--i:0">
+    <div class="kicker"><span class="label">Room 02 · Task analytics</span><span class="st st--live">2 running</span></div>
+    <h1>Tasks <em class="grad">in orbit</em></h1>
+    <p>Every request becomes a mission: plan revisions, the steps that ran, what each step cost and the artifacts it left behind.</p>
+  </div>
+  <div class="phead-actions rise" style="--i:1">
+    <div class="search" style="width:min(320px,100%)"><i data-ico="search" class="icon icon--sm"></i><label class="sr-only" for="tq">Search tasks</label><input id="tq" class="input" type="search" placeholder="Search tasks, ids, models"></div>
+    <a class="btn btn--primary" href="overview.html#compose"><i data-ico="plus" class="icon icon--sm"></i> New task</a>
+  </div>
+</header>
+
+<div class="grid tk">
+  <aside class="win c-4 l-c-5 m-c-12 tk-list rise" style="--i:2" aria-label="Task list">
+    <div class="tabs tk-tabs" role="tablist" data-tabs="tk" aria-label="Filter tasks">
+      <button class="tab" role="tab" data-tab="all" aria-selected="true">All <span class="count">12</span></button>
+      <button class="tab" role="tab" data-tab="run" aria-selected="false">Live <span class="count">2</span></button>
+      <button class="tab" role="tab" data-tab="done" aria-selected="false">Done <span class="count">9</span></button>
+      <button class="tab" role="tab" data-tab="fail" aria-selected="false">Failed <span class="count">1</span></button>
+    </div>
+    <ul id="tk-items" class="tk-items"></ul>
+  </aside>
+  <article class="win win--hi c-8 l-c-7 m-c-12 tk-detail rise" style="--i:3" id="tk-detail" aria-live="polite" tabindex="-1"></article>
+</div>
+</main>
+<script src="assets/js/vendor/three.min.js"></script>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/core.js"></script>
+<script src="assets/js/motion.js"></script>
+<script src="assets/js/scene.js"></script>
+<script src="assets/js/nav.js"></script>
+<script src="assets/js/render.js"></script>
+<script src="assets/js/charts.js"></script>
+<script src="assets/js/drawer.js"></script>
+<script src="assets/js/toast.js"></script>
+<script src="assets/js/cmdk.js"></script>
+<script src="assets/js/live.js"></script>
+<script src="assets/js/tabs.js"></script>
+<script src="assets/js/parallax.js"></script>
+<script src="assets/js/pages/tasks.js"></script>
+</body>
+</html>

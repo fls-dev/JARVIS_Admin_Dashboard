@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en" data-page="operations">
+<head>
+<meta charset="utf-8">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><defs><radialGradient id='g' cx='.38' cy='.32' r='.7'><stop offset='0' stop-color='%23fff'/><stop offset='.35' stop-color='%238BE9FF'/><stop offset='1' stop-color='%231B2A6B'/></radialGradient></defs><rect width='64' height='64' rx='16' fill='%2305060C'/><circle cx='32' cy='32' r='19' fill='url(%23g)'/></svg>">
+<meta name="author" content="fls-dev — https://github.com/fls-dev">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Operations · JARVIS Orbital</title>
+<meta name="description" content="JARVIS Orbital · Operations">
+<meta name="theme-color" content="#03050D">
+<link rel="stylesheet" href="assets/css/tokens.css">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<link rel="stylesheet" href="assets/css/pages.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="sky" aria-hidden="true"></div>
+<canvas id="scene" aria-hidden="true"></canvas>
+<div class="planet-css" aria-hidden="true"></div>
+<div data-jv-nav></div>
+<main id="main" class="page page--operations">
+<header class="phead">
+  <div class="rise" style="--i:0">
+    <div class="kicker"><span class="label">Room 03 · Operations</span><span class="st st--live">2 running</span><span class="st st--warn">1 degraded</span></div>
+    <h1>Mission <em class="grad">control</em></h1>
+    <p>The queue, the workers that execute it and everything that broke along the way. The planet below is the fleet: arcs are live calls.</p>
+  </div>
+  <div class="phead-actions rise" style="--i:1">
+    <div class="seg" role="group" aria-label="Time window" data-chipgroup id="ops-win"><button aria-pressed="false" data-v="1h">1 h</button><button aria-pressed="true" data-v="24h">24 h</button><button aria-pressed="false" data-v="7d">7 d</button></div>
+    <button class="btn" data-toast="Queue paused|New steps wait until you resume|warn"><i data-ico="pause" class="icon icon--sm"></i> Pause queue</button>
+  </div>
+</header>
+
+<div class="kpis kpis--win op-kpis rise" style="--n:4;--i:2">
+  <div class="kpi kpi--ice"><span class="label">Running</span><span class="kpi-v" data-live="running">02</span><span class="kpi-d">T-0218 · T-0217</span></div>
+  <div class="kpi"><span class="label">Queued</span><span class="kpi-v" data-live="queued">03</span><span class="kpi-d">next 02:30</span></div>
+  <div class="kpi"><span class="label">Steps / hour</span><span class="kpi-v">14<small>avg 9.4</small></span><span class="kpi-d"><span class="up">▲ 24%</span> vs yesterday</span></div>
+  <div class="kpi kpi--sun"><span class="label">p95 step</span><span class="kpi-v">840<small>ms</small></span><span class="kpi-d">cloud-router</span></div>
+</div>
+
+<div class="grid op">
+  <section class="win c-8 l-c-12 rise" style="--i:3" data-depth=".15" aria-labelledby="th-h">
+    <div class="win-h"><h2 id="th-h"><span class="ico"><i data-ico="operations" class="icon icon--sm"></i></span>Throughput · 24 h</h2><div class="legend"><span><i style="background:var(--ice)"></i>steps</span><span><i style="background:var(--sun)"></i>failures × 10</span></div></div>
+    <div id="op-line"></div>
+    <div class="op-axis mono"><span>00:00</span><span>06:00</span><span>12:00</span><span>18:00</span><span>now</span></div>
+  </section>
+  <section class="win c-4 l-c-6 m-c-12 rise" style="--i:4" data-depth=".25" aria-labelledby="wk-h">
+    <div class="win-h"><h2 id="wk-h"><span class="ico sun"><i data-ico="cpu" class="icon icon--sm"></i></span>Workers</h2><span class="label">4 online</span></div>
+    <ul class="workers" id="workers"></ul>
+  </section>
+  <section class="win c-8 l-c-12 rise" style="--i:5" aria-labelledby="q-h">
+    <div class="win-h"><h2 id="q-h"><span class="ico"><i data-ico="layers" class="icon icon--sm"></i></span>Queue</h2><span class="label">5 steps</span></div>
+    <table class="dtable"><thead><tr><th>Op</th><th>Step</th><th>Model</th><th class="r">Wait / run</th><th class="r">Cost</th><th>Status</th></tr></thead><tbody id="queue"></tbody></table>
+  </section>
+  <section class="win c-4 l-c-6 m-c-12 rise" style="--i:6" aria-labelledby="er-h">
+    <div class="win-h"><h2 id="er-h"><span class="ico sun"><i data-ico="bolt" class="icon icon--sm"></i></span>Errors · 24 h</h2><span class="st st--err">2</span></div>
+    <ul class="errs" id="errs"></ul>
+    <button class="btn btn--block" style="margin-top:16px" data-cmdk="Explain errors ">Ask JARVIS to explain</button>
+  </section>
+</div>
+</main>
+<script src="assets/js/vendor/three.min.js"></script>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/core.js"></script>
+<script src="assets/js/motion.js"></script>
+<script src="assets/js/scene.js"></script>
+<script src="assets/js/nav.js"></script>
+<script src="assets/js/render.js"></script>
+<script src="assets/js/charts.js"></script>
+<script src="assets/js/drawer.js"></script>
+<script src="assets/js/toast.js"></script>
+<script src="assets/js/cmdk.js"></script>
+<script src="assets/js/live.js"></script>
+<script src="assets/js/tabs.js"></script>
+<script src="assets/js/parallax.js"></script>
+<script src="assets/js/pages/operations.js"></script>
+</body>
+</html>

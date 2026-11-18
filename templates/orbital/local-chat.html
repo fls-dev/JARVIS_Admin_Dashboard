@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en" data-page="local-chat">
+<head>
+<meta charset="utf-8">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><defs><radialGradient id='g' cx='.38' cy='.32' r='.7'><stop offset='0' stop-color='%23fff'/><stop offset='.35' stop-color='%238BE9FF'/><stop offset='1' stop-color='%231B2A6B'/></radialGradient></defs><rect width='64' height='64' rx='16' fill='%2305060C'/><circle cx='32' cy='32' r='19' fill='url(%23g)'/></svg>">
+<meta name="author" content="fls-dev — https://github.com/fls-dev">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Local chat · JARVIS Orbital</title>
+<meta name="description" content="JARVIS Orbital · Local chat">
+<meta name="theme-color" content="#03050D">
+<link rel="stylesheet" href="assets/css/tokens.css">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<link rel="stylesheet" href="assets/css/pages.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="sky" aria-hidden="true"></div>
+<canvas id="scene" aria-hidden="true"></canvas>
+<div class="planet-css" aria-hidden="true"></div>
+<div data-jv-nav></div>
+<main id="main" class="page page--local-chat">
+<div class="grid lc">
+  <section class="win win--hi c-8 l-c-12 lc-chat rise" style="--i:0" aria-labelledby="lc-h">
+    <div class="win-h lc-head">
+      <h1 id="lc-h" class="lc-title"><span class="ico"><i data-ico="local-chat" class="icon icon--sm"></i></span>Local chat <span class="label">Room 04</span></h1>
+      <div class="row"><span class="st st--ok">On device</span><span class="chip mono">$0.000000 / token</span></div>
+    </div>
+    <ol class="msgs" id="msgs" aria-live="polite"></ol>
+    <form class="lc-form" id="lc-form">
+      <div class="lc-presets" data-chipgroup id="lc-pre" aria-label="Prompts"></div>
+      <div class="lc-input">
+        <label class="sr-only" for="lc-in">Message</label>
+        <textarea id="lc-in" rows="1" placeholder="Ask the local model about your fleet…"></textarea>
+        <button type="button" class="btn btn--icon" aria-label="Attach file"><i data-ico="clip" class="icon icon--sm"></i></button>
+        <button type="submit" class="btn btn--primary btn--icon" aria-label="Send"><i data-ico="send" class="icon icon--sm"></i></button>
+      </div>
+    </form>
+  </section>
+  <aside class="c-4 l-c-12 lc-side">
+    <section class="win rise" style="--i:1" data-depth=".25" aria-labelledby="mdl-h">
+      <div class="win-h"><h2 id="mdl-h"><span class="ico sun"><i data-ico="cpu" class="icon icon--sm"></i></span>Model</h2><span class="st st--live">Loaded</span></div>
+      <div class="field"><label for="lc-m">Endpoint model</label><select id="lc-m" class="select"><option>Qwen3 4B Q5_K_M</option><option>Qwen3-Coder 30B</option></select></div>
+      <div class="kpis lc-kpis" style="--n:2">
+        <div class="kpi kpi--ice"><span class="label">Speed</span><span class="kpi-v kpi-v--sm">41.7<small>tok/s</small></span></div>
+        <div class="kpi"><span class="label">First token</span><span class="kpi-v kpi-v--sm">182<small>ms</small></span></div>
+      </div>
+      <dl class="dl" style="margin-top:18px"><dt>Endpoint</dt><dd>jarvis.example.com/local-llm/v1</dd><dt>Context</dt><dd>4 096</dd><dt>Adapter</dt><dd>jarvis-sre-runbooks-r2</dd></dl>
+    </section>
+    <section class="win rise" style="--i:2" aria-labelledby="ctx-h">
+      <div class="win-h"><h2 id="ctx-h"><span class="ico"><i data-ico="memory" class="icon icon--sm"></i></span>Context</h2></div>
+      <label class="switch"><input type="checkbox" checked><span class="track"></span>Use memory (2 148 items)</label>
+      <label class="switch"><input type="checkbox" checked><span class="track"></span>Include live telemetry</label>
+      <label class="switch"><input type="checkbox"><span class="track"></span>Escalate hard questions to cloud</label>
+    </section>
+  </aside>
+</div>
+</main>
+<script src="assets/js/vendor/three.min.js"></script>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/core.js"></script>
+<script src="assets/js/motion.js"></script>
+<script src="assets/js/scene.js"></script>
+<script src="assets/js/nav.js"></script>
+<script src="assets/js/render.js"></script>
+<script src="assets/js/charts.js"></script>
+<script src="assets/js/drawer.js"></script>
+<script src="assets/js/toast.js"></script>
+<script src="assets/js/cmdk.js"></script>
+<script src="assets/js/live.js"></script>
+<script src="assets/js/tabs.js"></script>
+<script src="assets/js/parallax.js"></script>
+<script src="assets/js/pages/local-chat.js"></script>
+</body>
+</html>

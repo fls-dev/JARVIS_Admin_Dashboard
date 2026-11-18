@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en" data-page="integrations">
+<head>
+<meta charset="utf-8">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><defs><radialGradient id='g' cx='.38' cy='.32' r='.7'><stop offset='0' stop-color='%23fff'/><stop offset='.35' stop-color='%238BE9FF'/><stop offset='1' stop-color='%231B2A6B'/></radialGradient></defs><rect width='64' height='64' rx='16' fill='%2305060C'/><circle cx='32' cy='32' r='19' fill='url(%23g)'/></svg>">
+<meta name="author" content="fls-dev — https://github.com/fls-dev">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Integrations · JARVIS Orbital</title>
+<meta name="description" content="JARVIS Orbital · Integrations">
+<meta name="theme-color" content="#03050D">
+<link rel="stylesheet" href="assets/css/tokens.css">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<link rel="stylesheet" href="assets/css/pages.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="sky" aria-hidden="true"></div>
+<canvas id="scene" aria-hidden="true"></canvas>
+<div class="planet-css" aria-hidden="true"></div>
+<div data-jv-nav></div>
+<main id="main" class="page page--integrations">
+<section class="in-hero" aria-labelledby="in-t">
+  <div class="phead" style="margin-bottom:0">
+    <div class="rise" style="--i:0">
+      <div class="kicker"><span class="label">Room 08 · Integrations</span><span class="label">Secrets encrypted · only verified connections run</span></div>
+      <h1 id="in-t">Integration <em class="grad">catalog</em></h1>
+      <p>13 connections orbit the core: every satellite is a live provider, its trail is today's traffic. Search, connect and verify everything in one place.</p>
+      <div class="phead-actions" style="margin-top:24px">
+        <button class="btn" data-toast="Notifications enabled|Telegram · 123456789"><i data-ico="bell" class="icon icon--sm"></i> Enable notifications</button>
+        <a class="btn btn--primary" href="#explore"><i data-ico="plus" class="icon icon--sm"></i> Add connection</a>
+      </div>
+    </div>
+  </div>
+  <div class="sat-labels" id="sat-labels" aria-hidden="true"></div>
+</section>
+
+<div class="kpis kpis--win in-kpis rise" style="--n:4;--i:2">
+  <div class="kpi"><span class="label">Connected</span><span class="kpi-v">13<small>/ 46</small></span><span class="kpi-d">8 models · 5 tools</span></div>
+  <div class="kpi kpi--ice"><span class="label">Verified</span><span class="kpi-v">13</span><span class="kpi-d">last check 2 min ago</span></div>
+  <div class="kpi"><span class="label">Calls today</span><span class="kpi-v">127</span><span class="kpi-d">p50 640 ms</span></div>
+  <div class="kpi"><span class="label">Spend today</span><span class="kpi-v kpi-v--sm" data-live="spendPlain">$0.091264</span><span class="kpi-d">5 paid providers</span></div>
+</div>
+
+<section class="win sec-gap rise" style="--i:3" aria-labelledby="conn-h">
+  <div class="win-h">
+    <h2 id="conn-h"><span class="ico"><i data-ico="integrations" class="icon icon--sm"></i></span>Configured connections</h2>
+    <div class="row" data-chipgroup id="conn-f" role="group" aria-label="Filter connections">
+      <button class="chip" aria-pressed="true" data-v="all">All <b>13</b></button>
+      <button class="chip" aria-pressed="false" data-v="model">Cloud models</button>
+      <button class="chip" aria-pressed="false" data-v="local">Local</button>
+      <button class="chip" aria-pressed="false" data-v="tool">Tools &amp; channels</button>
+    </div>
+  </div>
+  <table class="dtable in-conn">
+    <thead><tr><th>Connection</th><th class="hide-l">Kind</th><th class="r hide-t">Caps</th><th class="r">Calls</th><th class="hide-t">Latency</th><th class="r">Spend</th><th>Status</th><th><span class="sr-only">Actions</span></th></tr></thead>
+    <tbody id="conn"></tbody>
+  </table>
+</section>
+
+<section class="win sec-gap" aria-labelledby="proc-h">
+  <div class="win-h"><h2 id="proc-h"><span class="ico sun"><i data-ico="file" class="icon icon--sm"></i></span>Managed file processors</h2><span class="label">Exact MIME contracts · no extension guessing</span></div>
+  <ol class="proc" id="proc"></ol>
+</section>
+
+<section class="sec-gap" id="explore" aria-labelledby="ex-h">
+  <div class="win-h ex-h"><h2 id="ex-h" class="t-xl" style="font-weight:300">Explore <span class="grad">integrations</span></h2><span class="label">Provider presets, verified adapters and the MCP registry</span></div>
+  <div class="ex-bar">
+    <div class="tabs" role="tablist" data-tabs="cat" aria-label="Catalog groups" id="cat-tabs"></div>
+    <div class="search ex-search"><i data-ico="search" class="icon icon--sm"></i><label class="sr-only" for="cq">Search the integration catalog</label><input id="cq" class="input" type="search" placeholder="Search the integration catalog…"></div>
+  </div>
+  <p class="label ex-count" id="cat-count" aria-live="polite"></p>
+  <div class="cards" id="cat"></div>
+</section>
+</main>
+<script src="assets/js/vendor/three.min.js"></script>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/core.js"></script>
+<script src="assets/js/motion.js"></script>
+<script src="assets/js/scene.js"></script>
+<script src="assets/js/nav.js"></script>
+<script src="assets/js/render.js"></script>
+<script src="assets/js/charts.js"></script>
+<script src="assets/js/drawer.js"></script>
+<script src="assets/js/toast.js"></script>
+<script src="assets/js/cmdk.js"></script>
+<script src="assets/js/live.js"></script>
+<script src="assets/js/tabs.js"></script>
+<script src="assets/js/parallax.js"></script>
+<script src="assets/js/pages/integrations.js"></script>
+</body>
+</html>
