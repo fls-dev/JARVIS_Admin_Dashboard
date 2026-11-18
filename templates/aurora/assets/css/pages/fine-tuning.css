@@ -10,7 +10,7 @@
 .substeps{display:flex;gap:6px;margin-top:12px}.substeps span{flex:1;text-align:center;padding:7px 0;border-radius:9px;font:500 11px/1 var(--mono);background:rgba(255,255,255,.05);color:var(--ink-3);border:1px dashed rgba(255,255,255,.14)}
 .substeps span.on{border:1px solid rgba(255,193,92,.6);color:var(--run);background:rgba(255,193,92,.08)}
 .mini-orb{position:absolute;right:10px;top:10px;width:64px;height:64px}
-.ftgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:18px}
+.ftgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:18px}
 .pan{border-radius:var(--r-lg);padding:20px 22px;min-height:540px;display:flex;flex-direction:column}
 .kv4{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
 .kv4>div{padding:12px;border-radius:14px;background:rgba(255,255,255,.055);font:500 11px/1 var(--mono);color:var(--ink-3)}.kv4 b{display:block;font:600 21px/1 var(--sans);letter-spacing:-.03em;color:var(--ink);margin-bottom:7px}
@@ -25,8 +25,8 @@
 .runs .rw b{color:var(--ink);font-weight:500}
 .loss{display:block;width:100%;height:150px}
 .runs .empty{flex:1}
-@media (max-width:1599px){.ftgrid{grid-template-columns:1fr}.pan{min-height:0}.runs .empty{padding:40px 0}}
-@media (min-width:900px) and (max-width:1100px){.ftgrid{grid-template-columns:1fr 1fr}}
+@media (max-width:1599px){.ftgrid{grid-template-columns:minmax(0,1fr)}.pan{min-height:0}.runs .empty{padding:40px 0}}
+@media (min-width:900px) and (max-width:1100px){.ftgrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:640px){
  .kv4{grid-template-columns:repeat(2,1fr)}
  .pan{padding:16px}
