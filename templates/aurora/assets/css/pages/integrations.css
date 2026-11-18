@@ -32,11 +32,13 @@
 .tip b{font:600 15px/1 var(--sans)}.tip p{font:500 11.5px/1.4 var(--mono);color:var(--ink-3);margin:6px 0 10px}
 .cl{display:flex;flex-wrap:wrap;gap:6px}.cl .chip{height:30px}.cl .chip i{width:7px;height:7px;border-radius:50%;background:#fff}.cl .chip.has i{background:var(--ok)}.cl .chip.mcp i{background:var(--tool)}.cl .chip.off{display:none}
 .mdl{display:flex;flex-direction:column;gap:6px}
-.mdl div{display:grid;grid-template-columns:1fr 62px 72px 38px;gap:6px;align-items:center;white-space:nowrap;font:500 12px/1 var(--mono);color:var(--ink-2);padding:8px 10px;border-radius:11px;background:rgba(255,255,255,.045)}
+.mdl div{display:grid;grid-template-columns:minmax(0,1fr) auto auto 38px;gap:6px 10px;align-items:center;white-space:nowrap;font:500 12px/1 var(--mono);color:var(--ink-2);padding:8px 10px;border-radius:11px;background:rgba(255,255,255,.045)}
 .mdl b{color:var(--ink);font-weight:500;overflow:hidden;text-overflow:ellipsis}
+.mdl.pr div{grid-template-columns:auto auto minmax(0,1fr);grid-template-areas:"n n t" "i o t";gap:6px 12px}
+.mdl.pr b{grid-area:n}.mdl.pr span:nth-child(2){grid-area:i}.mdl.pr span:nth-child(3){grid-area:o}.mdl.pr .toggle{grid-area:t;justify-self:end;margin-right:-4px}
 .rt{font:500 12.5px/1.55 var(--mono);color:var(--ink-2);padding:10px 12px;border-radius:12px;background:rgba(5,4,10,.4);border:1px dashed rgba(168,151,255,.4)}
 .rt em{font-style:normal;color:var(--ai)}
 @media (max-width:640px){
  .catalog .seg{overflow-x:auto;max-width:100%;scrollbar-width:none}.srch{width:100%}
- .mdl div{grid-template-columns:1fr 56px 64px 38px;font-size:11px}
+ .mdl div{font-size:11px}
 }
