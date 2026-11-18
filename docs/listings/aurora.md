@@ -4,7 +4,7 @@ A dark, glassy admin template for AI agents. A glass sphere orchestrates a livin
 
 ## Features
 
-- 8 app screens: Overview, Tasks, Integrations, Fine-tuning (empty state and live run), Local chat, Memory, Scheduled work, Audit trail. Plus a UI kit and a hub page.
+- 9 app screens: Overview, Tasks, Operations, Integrations, Fine-tuning (empty state and live run), Local chat, Memory, Scheduled work, Audit trail. Plus a UI kit and a hub page.
 - Orbit-wheel menu on desktop (scroll or keys 1–9), a bottom dock with a radial menu on tablet and phone, and a ⌘K command palette.
 - Slide-out inspector on desktop that becomes a bottom sheet on mobile.
 - Fully responsive from 1920 down to 390 px. Canvases turn into vertical flows on phones.

@@ -35,7 +35,7 @@
 
 [Исходники](templates/aurora/) · [Демо](https://fls-dev.github.io/JARVIS_Admin_Dashboard/templates/aurora/index.html) · [Документация шаблона (EN)](templates/aurora/README.md)
 
-- **10 HTML-страниц**: хаб, UI kit и 8 экранов приложения; у Fine-tuning есть пустое состояние и живой запуск (`#runs`).
+- **11 HTML-страниц**: хаб, UI kit и 9 экранов приложения, включая полноценную **Operations** (очередь, пропускная способность, воркеры, ошибки); у Fine-tuning есть пустое состояние и живой запуск (`#runs`).
 - Меню-колесо на десктопе, нижний док и радиальное меню на планшете и телефоне, клавиши `1–9`, палитра `⌘K` / `Ctrl K`.
 - Инспектор справа на десктопе превращается в нижнюю шторку на мобильном; холсты на телефоне становятся вертикальными потоками.
 - Сфера на Canvas 2D, темы aurora и midnight, поддержка уменьшения анимации с ручным переключателем.
@@ -47,18 +47,21 @@
 <td align="center" width="33%"><a href="docs/screenshots/aurora/02-tasks-desktop.jpg"><img src="docs/screenshots/aurora/02-tasks-desktop.jpg" alt="Tasks (desktop)" width="280"></a><br><sub><b>Tasks</b></sub></td>
 </tr>
 <tr>
+<td align="center" width="33%"><a href="docs/screenshots/aurora/13-operations-desktop.jpg"><img src="docs/screenshots/aurora/13-operations-desktop.jpg" alt="Operations (desktop)" width="280"></a><br><sub><b>Operations</b></sub></td>
 <td align="center" width="33%"><a href="docs/screenshots/aurora/03-local-chat-desktop.jpg"><img src="docs/screenshots/aurora/03-local-chat-desktop.jpg" alt="Local chat (desktop)" width="280"></a><br><sub><b>Local chat</b></sub></td>
 <td align="center" width="33%"><a href="docs/screenshots/aurora/04-fine-tuning-desktop.jpg"><img src="docs/screenshots/aurora/04-fine-tuning-desktop.jpg" alt="Fine-tuning (desktop)" width="280"></a><br><sub><b>Fine-tuning</b></sub></td>
-<td align="center" width="33%"><a href="docs/screenshots/aurora/05-fine-tuning-runs-desktop.jpg"><img src="docs/screenshots/aurora/05-fine-tuning-runs-desktop.jpg" alt="Fine-tuning · runs (desktop)" width="280"></a><br><sub><b>Fine-tuning · runs</b></sub></td>
 </tr>
 <tr>
+<td align="center" width="33%"><a href="docs/screenshots/aurora/05-fine-tuning-runs-desktop.jpg"><img src="docs/screenshots/aurora/05-fine-tuning-runs-desktop.jpg" alt="Fine-tuning · runs (desktop)" width="280"></a><br><sub><b>Fine-tuning · runs</b></sub></td>
 <td align="center" width="33%"><a href="docs/screenshots/aurora/06-scheduled-desktop.jpg"><img src="docs/screenshots/aurora/06-scheduled-desktop.jpg" alt="Scheduled work (desktop)" width="280"></a><br><sub><b>Scheduled work</b></sub></td>
 <td align="center" width="33%"><a href="docs/screenshots/aurora/07-memory-desktop.jpg"><img src="docs/screenshots/aurora/07-memory-desktop.jpg" alt="Memory (desktop)" width="280"></a><br><sub><b>Memory</b></sub></td>
-<td align="center" width="33%"><a href="docs/screenshots/aurora/08-integrations-desktop.jpg"><img src="docs/screenshots/aurora/08-integrations-desktop.jpg" alt="Integrations (desktop)" width="280"></a><br><sub><b>Integrations</b></sub></td>
 </tr>
 <tr>
+<td align="center" width="33%"><a href="docs/screenshots/aurora/08-integrations-desktop.jpg"><img src="docs/screenshots/aurora/08-integrations-desktop.jpg" alt="Integrations (desktop)" width="280"></a><br><sub><b>Integrations</b></sub></td>
 <td align="center" width="33%"><a href="docs/screenshots/aurora/09-audit-desktop.jpg"><img src="docs/screenshots/aurora/09-audit-desktop.jpg" alt="Audit trail (desktop)" width="280"></a><br><sub><b>Audit trail</b></sub></td>
 <td align="center" width="33%"><a href="docs/screenshots/aurora/10-ui-kit-desktop.jpg"><img src="docs/screenshots/aurora/10-ui-kit-desktop.jpg" alt="UI kit (desktop)" width="280"></a><br><sub><b>UI kit</b></sub></td>
+</tr>
+<tr>
 <td align="center" width="33%"><a href="docs/screenshots/aurora/12-command-palette-desktop.jpg"><img src="docs/screenshots/aurora/12-command-palette-desktop.jpg" alt="⌘K palette (desktop)" width="280"></a><br><sub><b>⌘K palette</b></sub></td>
 </tr>
 </table>
@@ -113,7 +116,7 @@
 | Навигация | Колесо; док + радиальное меню | Пилюля → дуга порталов; лист 3 × 3 |
 | Детали | Инспектор → нижняя шторка | Drawer |
 | Страниц | 10 | 11 |
-| Operations | Заглушка (toast) | Полноценная комната |
+| Operations | Полноценная страница | Полноценная комната |
 | Шрифты | Google Fonts | В комплекте |
 
 ## Быстрый старт
@@ -136,7 +139,6 @@ python3 -m http.server 8080   # или: npx serve .
 
 ## Roadmap
 
-- [ ] **Страница Operations для Aurora** (сейчас заглушка)
 - [ ] Проверка на реальных устройствах Safari и на GPU
 - [ ] Аудит доступности (клавиатура, скринридеры, контраст)
 - [ ] Визуальные регрессионные тесты

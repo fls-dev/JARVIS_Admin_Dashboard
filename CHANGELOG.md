@@ -7,6 +7,39 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.1] - 2026-11-18
+
+### Added
+
+- **Aurora Operations page** (`templates/aurora/operations.html`): queue, throughput chart,
+  workers and error list, with the selected step in the inspector. The navigation entry that
+  used to show a toast now opens it, and the hub lists it.
+
+### Fixed
+
+- **Aurora:** navigation wheel icons sat off-centre in their circles, the active orb included.
+- **Aurora:** wheel items at the ends of the arc were cut off at the screen edge.
+- **Aurora:** hub README button opened the raw Markdown file; it now opens the README on GitHub.
+- **Aurora:** inspector content spilled out of the panel on short screens; the panel now scrolls.
+- **Aurora:** Local chat column, composer and heading were squeezed between 1100 and 1599 px.
+- **Aurora:** Audit trail event cards and Integrations model list no longer clip or wrap text in
+  narrow columns; the Integrations sky no longer cuts off the last node label.
+- **Aurora:** Fine-tuning runs overflowed the viewport horizontally on phones.
+- **Aurora:** Overview orchestrator label overlapped the task canvas heading on wide screens, and
+  the Memory zoom controls covered the touch hint.
+- **Orbital:** Overview live ledger and telemetry feed truncated task titles and step labels on
+  tablets and phones; layouts now react to the width of the panel.
+- **Orbital:** Tasks tab strip was squashed in the list column, and the cost and duration figures
+  collided in the detail panel on tablets.
+- **Orbital:** Local chat preset chips overlapped and the composer placeholder was clipped on phones.
+- **Orbital:** hub title touched its eyebrow label, portals showed a rectangular focus outline,
+  and the Scheduled timeline clipped its time axis by a few pixels.
+
+### Changed
+
+- Regenerated screenshots, thumbnails, covers, banner and social preview. Added Aurora
+  Operations screenshots.
+
 ## [1.0.0] - 2026-11-18
 
 First public release.
@@ -28,10 +61,6 @@ First public release.
 - README (English and Russian), MIT license, contributing guide, code of conduct, security
   policy, issue forms and pull request template.
 
-### Known limitations
-
-- Aurora lists an **Operations** section in its navigation, but the page is a placeholder that
-  shows a toast. Orbital includes a full Operations room.
-
-[Unreleased]: https://github.com/fls-dev/JARVIS_Admin_Dashboard/compare/v1.0.0...HEAD
+[Unreleased]: https://github.com/fls-dev/JARVIS_Admin_Dashboard/compare/v1.0.1...HEAD
+[1.0.1]: https://github.com/fls-dev/JARVIS_Admin_Dashboard/compare/v1.0.0...v1.0.1
 [1.0.0]: https://github.com/fls-dev/JARVIS_Admin_Dashboard/releases/tag/v1.0.0

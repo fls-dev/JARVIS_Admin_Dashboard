@@ -36,7 +36,7 @@ A glass sphere orchestrates a living canvas of task nodes with flowing edges, al
 
 [Open source](templates/aurora/) · [Live demo](https://fls-dev.github.io/JARVIS_Admin_Dashboard/templates/aurora/index.html) · [Template docs](templates/aurora/README.md)
 
-- **10 HTML pages**: hub + UI kit + 8 app screens. Fine-tuning has both an empty state and a live run (`#runs`).
+- **11 HTML pages**: hub + UI kit + 9 app screens, including a full **Operations** room (queue, throughput, workers, errors). Fine-tuning has both an empty state and a live run (`#runs`).
 - Orbit-wheel menu on desktop; bottom dock and radial menu on tablet and phone. `1–9` navigation and a `⌘K` / `Ctrl K` palette.
 - Inspector slides in on desktop and becomes a bottom sheet on mobile. Living canvases turn into vertical flows on phones.
 - Canvas 2D glass sphere, aurora and midnight themes, reduced-motion setting with an in-app override.
@@ -52,18 +52,21 @@ A glass sphere orchestrates a living canvas of task nodes with flowing edges, al
 <td align="center" width="33%"><a href="docs/screenshots/aurora/02-tasks-desktop.jpg"><img src="docs/screenshots/aurora/02-tasks-desktop.jpg" alt="Tasks (desktop)" width="280"></a><br><sub><b>Tasks</b></sub></td>
 </tr>
 <tr>
+<td align="center" width="33%"><a href="docs/screenshots/aurora/13-operations-desktop.jpg"><img src="docs/screenshots/aurora/13-operations-desktop.jpg" alt="Operations (desktop)" width="280"></a><br><sub><b>Operations</b></sub></td>
 <td align="center" width="33%"><a href="docs/screenshots/aurora/03-local-chat-desktop.jpg"><img src="docs/screenshots/aurora/03-local-chat-desktop.jpg" alt="Local chat (desktop)" width="280"></a><br><sub><b>Local chat</b></sub></td>
 <td align="center" width="33%"><a href="docs/screenshots/aurora/04-fine-tuning-desktop.jpg"><img src="docs/screenshots/aurora/04-fine-tuning-desktop.jpg" alt="Fine-tuning (desktop)" width="280"></a><br><sub><b>Fine-tuning</b></sub></td>
-<td align="center" width="33%"><a href="docs/screenshots/aurora/05-fine-tuning-runs-desktop.jpg"><img src="docs/screenshots/aurora/05-fine-tuning-runs-desktop.jpg" alt="Fine-tuning · runs (desktop)" width="280"></a><br><sub><b>Fine-tuning · runs</b></sub></td>
 </tr>
 <tr>
+<td align="center" width="33%"><a href="docs/screenshots/aurora/05-fine-tuning-runs-desktop.jpg"><img src="docs/screenshots/aurora/05-fine-tuning-runs-desktop.jpg" alt="Fine-tuning · runs (desktop)" width="280"></a><br><sub><b>Fine-tuning · runs</b></sub></td>
 <td align="center" width="33%"><a href="docs/screenshots/aurora/06-scheduled-desktop.jpg"><img src="docs/screenshots/aurora/06-scheduled-desktop.jpg" alt="Scheduled work (desktop)" width="280"></a><br><sub><b>Scheduled work</b></sub></td>
 <td align="center" width="33%"><a href="docs/screenshots/aurora/07-memory-desktop.jpg"><img src="docs/screenshots/aurora/07-memory-desktop.jpg" alt="Memory (desktop)" width="280"></a><br><sub><b>Memory</b></sub></td>
-<td align="center" width="33%"><a href="docs/screenshots/aurora/08-integrations-desktop.jpg"><img src="docs/screenshots/aurora/08-integrations-desktop.jpg" alt="Integrations (desktop)" width="280"></a><br><sub><b>Integrations</b></sub></td>
 </tr>
 <tr>
+<td align="center" width="33%"><a href="docs/screenshots/aurora/08-integrations-desktop.jpg"><img src="docs/screenshots/aurora/08-integrations-desktop.jpg" alt="Integrations (desktop)" width="280"></a><br><sub><b>Integrations</b></sub></td>
 <td align="center" width="33%"><a href="docs/screenshots/aurora/09-audit-desktop.jpg"><img src="docs/screenshots/aurora/09-audit-desktop.jpg" alt="Audit trail (desktop)" width="280"></a><br><sub><b>Audit trail</b></sub></td>
 <td align="center" width="33%"><a href="docs/screenshots/aurora/10-ui-kit-desktop.jpg"><img src="docs/screenshots/aurora/10-ui-kit-desktop.jpg" alt="UI kit (desktop)" width="280"></a><br><sub><b>UI kit</b></sub></td>
+</tr>
+<tr>
 <td align="center" width="33%"><a href="docs/screenshots/aurora/12-command-palette-desktop.jpg"><img src="docs/screenshots/aurora/12-command-palette-desktop.jpg" alt="⌘K palette (desktop)" width="280"></a><br><sub><b>⌘K palette</b></sub></td>
 </tr>
 </table>
@@ -77,16 +80,17 @@ A glass sphere orchestrates a living canvas of task nodes with flowing edges, al
 <tr>
 <td align="center" width="25%"><a href="docs/screenshots/aurora/01-overview-mobile.jpg"><img src="docs/screenshots/aurora/01-overview-mobile.jpg" alt="Overview (mobile)" width="180"></a><br><sub><b>Overview</b></sub></td>
 <td align="center" width="25%"><a href="docs/screenshots/aurora/02-tasks-mobile.jpg"><img src="docs/screenshots/aurora/02-tasks-mobile.jpg" alt="Tasks (mobile)" width="180"></a><br><sub><b>Tasks</b></sub></td>
+<td align="center" width="25%"><a href="docs/screenshots/aurora/13-operations-mobile.jpg"><img src="docs/screenshots/aurora/13-operations-mobile.jpg" alt="Operations (mobile)" width="180"></a><br><sub><b>Operations</b></sub></td>
 <td align="center" width="25%"><a href="docs/screenshots/aurora/03-local-chat-mobile.jpg"><img src="docs/screenshots/aurora/03-local-chat-mobile.jpg" alt="Local chat (mobile)" width="180"></a><br><sub><b>Local chat</b></sub></td>
-<td align="center" width="25%"><a href="docs/screenshots/aurora/04-fine-tuning-mobile.jpg"><img src="docs/screenshots/aurora/04-fine-tuning-mobile.jpg" alt="Fine-tuning (mobile)" width="180"></a><br><sub><b>Fine-tuning</b></sub></td>
 </tr>
 <tr>
+<td align="center" width="25%"><a href="docs/screenshots/aurora/04-fine-tuning-mobile.jpg"><img src="docs/screenshots/aurora/04-fine-tuning-mobile.jpg" alt="Fine-tuning (mobile)" width="180"></a><br><sub><b>Fine-tuning</b></sub></td>
 <td align="center" width="25%"><a href="docs/screenshots/aurora/05-fine-tuning-runs-mobile.jpg"><img src="docs/screenshots/aurora/05-fine-tuning-runs-mobile.jpg" alt="Fine-tuning · runs (mobile)" width="180"></a><br><sub><b>Fine-tuning · runs</b></sub></td>
 <td align="center" width="25%"><a href="docs/screenshots/aurora/06-scheduled-mobile.jpg"><img src="docs/screenshots/aurora/06-scheduled-mobile.jpg" alt="Scheduled work (mobile)" width="180"></a><br><sub><b>Scheduled work</b></sub></td>
 <td align="center" width="25%"><a href="docs/screenshots/aurora/07-memory-mobile.jpg"><img src="docs/screenshots/aurora/07-memory-mobile.jpg" alt="Memory (mobile)" width="180"></a><br><sub><b>Memory</b></sub></td>
-<td align="center" width="25%"><a href="docs/screenshots/aurora/08-integrations-mobile.jpg"><img src="docs/screenshots/aurora/08-integrations-mobile.jpg" alt="Integrations (mobile)" width="180"></a><br><sub><b>Integrations</b></sub></td>
 </tr>
 <tr>
+<td align="center" width="25%"><a href="docs/screenshots/aurora/08-integrations-mobile.jpg"><img src="docs/screenshots/aurora/08-integrations-mobile.jpg" alt="Integrations (mobile)" width="180"></a><br><sub><b>Integrations</b></sub></td>
 <td align="center" width="25%"><a href="docs/screenshots/aurora/09-audit-mobile.jpg"><img src="docs/screenshots/aurora/09-audit-mobile.jpg" alt="Audit trail (mobile)" width="180"></a><br><sub><b>Audit trail</b></sub></td>
 <td align="center" width="25%"><a href="docs/screenshots/aurora/11-radial-menu-open-mobile.jpg"><img src="docs/screenshots/aurora/11-radial-menu-open-mobile.jpg" alt="Radial menu (mobile)" width="180"></a><br><sub><b>Radial menu</b></sub></td>
 <td align="center" width="25%"><a href="docs/screenshots/aurora/12-command-palette-mobile.jpg"><img src="docs/screenshots/aurora/12-command-palette-mobile.jpg" alt="⌘K palette (mobile)" width="180"></a><br><sub><b>⌘K palette</b></sub></td>
@@ -176,8 +180,8 @@ Nine rooms orbit one living 3D planet. Each page is a set of glass windows in a 
 | Mobile navigation | Dock + radial menu | 3 × 3 portal sheet |
 | Detail view | Inspector → bottom sheet | Drawer |
 | Themes | Aurora / Midnight | Twilight |
-| HTML pages (excluding starter) | 10 | 11 |
-| Operations | Placeholder (toast) | Full room |
+| HTML pages (excluding starter) | 11 | 11 |
+| Operations | Full room | Full room |
 | Fonts | Inter Tight, Instrument Serif, Geist Mono · Google Fonts | Sora, IBM Plex Mono · bundled |
 | Build / framework | None / none | None / none |
 
@@ -248,7 +252,6 @@ Designed for current Chrome, Edge, Firefox and Safari, including mobile. The sty
 
 ## Roadmap
 
-- [ ] **Operations page for Aurora** (currently a placeholder route that shows a toast)
 - [ ] Real-device Safari and hardware-GPU testing
 - [ ] Accessibility audit: keyboard, screen readers, contrast and touch targets
 - [ ] Automated visual regression tests

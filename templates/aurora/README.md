@@ -42,7 +42,7 @@ template/
 │   └── img/thumbs/       hub thumbnails used by index.html
 ```
 
-The wheel also lists an **Operations** section. It is a placeholder route (`ops:null` in `DATA.pages`): clicking it shows a toast until you add a page. See “How to add a page”.
+The wheel also lists **Operations** (`operations.html`): queue, throughput chart, workers and error list, with the selected queue step shown in the inspector. Its mock data lives in `DATA.ops` in `assets/js/data.js`.
 
 Scripts are classic (non-module), so the pages also work from `file://`. Load them in this order:
 `core → data → theme → orb → canvas → nav → palette → inspector → shell → pages/<page>.js`.
