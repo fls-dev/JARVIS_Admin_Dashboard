@@ -13,11 +13,11 @@ J.nav={
  wheel(){
   const w=document.createElement('nav');w.className='wheel';w.setAttribute('aria-label','Sections');document.body.appendChild(w);
   const N=DATA.nav.length,own=DATA.nav.findIndex(n=>n[1]==document.body.dataset.page);let act=Math.max(0,own);
-  const render=()=>{const H=innerHeight,ww=w.clientWidth||290,R=430,narrow=ww<260,cx=narrow?-360:ww-R-200,cy=Math.round(H*.52),step=narrow?.115:.135;
+  const render=()=>{const H=innerHeight,ww=w.clientWidth||290,R=430,narrow=ww<260,cy=Math.round(H*.52),step=narrow?.115:.135,reach=Math.floor(N/2),cx=Math.max(narrow?-360:ww-R-200,16+15-Math.cos(reach*step)*R);
    let h=`<svg width="${ww}" height="${H}"><defs><linearGradient id="wg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#B7A4FF" stop-opacity=".5"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient></defs>
     <circle cx="${cx}" cy="${cy}" r="${R}" fill="none" stroke="url(#wg)" stroke-width="1.2"/><circle cx="${cx}" cy="${cy}" r="${R-52}" fill="none" stroke="rgba(255,255,255,.06)" stroke-dasharray="2 6"/><circle cx="${cx}" cy="${cy}" r="${R+64}" fill="none" stroke="rgba(183,164,255,.08)"/></svg>`;
    DATA.nav.forEach(([l,k],i)=>{let d=i-act;if(d>4)d-=N;if(d<-4)d+=N;const a=d*step,x=cx+Math.cos(a)*R,y=cy+Math.sin(a)*R;
-    h+=`<a class="wi ${i==act&&own>=0?'on':''}" href="${DATA.pages[k]||'#'}" data-k="${k}" style="left:${x}px;top:${y}px;opacity:${1-Math.abs(d)*.14}"><span class="o">${ico(k,15,1.8)}</span><span class="l">${l}</span><kbd>${i+1}</kbd></a>`});
+    h+=`<a class="wi ${i==act&&own>=0?'on':''}" href="${DATA.pages[k]||'#'}" data-k="${k}" style="left:${x}px;top:${y}px;opacity:${y<22||y>H-22?0:1-Math.abs(d)*.14}${y<22||y>H-22?';pointer-events:none':''}"><span class="o">${ico(k,15,1.8)}</span><span class="l">${l}</span><kbd>${i+1}</kbd></a>`});
    w.innerHTML=h+`<div class="wheel-hint">scroll to turn · 1–9</div>`};
   render();J.onResize(render);
   w.addEventListener('click',e=>{const a=e.target.closest('.wi');if(a&&!DATA.pages[a.dataset.k]){e.preventDefault();J.nav.go(a.dataset.k)}});
