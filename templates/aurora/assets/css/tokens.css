@@ -1,0 +1,39 @@
+/* JARVIS Aurora · by fls-dev · https://github.com/fls-dev */
+/* ==========================================================================
+   JARVIS · tokens.css
+   Design tokens only: colour, glass materials, type, radii, motion, layout.
+   Themes override these variables via <html data-theme="…">.
+   Breakpoints (used in base.css / components.css / pages/*.css):
+     XL ≥1600 · L 1101–1599 · M (tablet) 641–1100 · S (mobile) ≤640
+   ========================================================================== */
+:root{
+  /* — surface — */
+  --bg:#08070D; --bg-2:#0E0D15; --ink:#F4F2FF; --ink-2:rgba(244,242,255,.68); --ink-3:rgba(244,242,255,.44); --ink-4:rgba(244,242,255,.22);
+  --hair:rgba(255,255,255,.08); --hair-2:rgba(255,255,255,.14);
+  /* — aurora — */
+  --au-violet:#6D4AFF; --au-pink:#FF4F93; --au-amber:#FF9B45; --au-mint:#22D3B0; --au-blue:#4F7BFF;
+  --grad-aurora:linear-gradient(110deg,#B7A4FF 0%,#FF8FC0 45%,#FFC48A 100%);
+  --grad-core:conic-gradient(from 200deg,#7C5CFF,#FF5C9A,#FFA24C,#3BE8C8,#7C5CFF);
+  /* — semantic — */
+  --ok:#58E6A6; --run:#FFC15C; --bad:#FF6B7A; --ai:#A897FF; --tool:#6AA8FF; --file:#3BE8C8; --idle:#8D88A3;
+  /* — glass materials — */
+  --g1-bg:rgba(255,255,255,.045); --g1-blur:14px;            /* thin: chips, nodes */
+  --g2-bg:rgba(22,19,34,.58);     --g2-blur:28px;            /* regular: panels, inspector */
+  --g3-bg:rgba(30,26,46,.62);     --g3-blur:44px;            /* thick: palette, dock, sheets */
+  --spec:inset 1px 1px 0 rgba(255,255,255,.28),inset -1px -1px 0 rgba(255,255,255,.06),inset 0 0 24px rgba(255,255,255,.035);
+  /* — type — */
+  --sans:"Inter Tight",system-ui,sans-serif; --serif:"Instrument Serif",Georgia,serif; --mono:"Geist Mono",ui-monospace,monospace;
+  --t-hero:600 60px/1.02 var(--sans); --t-h1:600 40px/1.05 var(--sans); --t-h2:600 24px/1.15 var(--sans); --t-h3:600 15px/1.2 var(--sans);
+  --t-body:500 14px/1.45 var(--sans); --t-small:500 12.5px/1.4 var(--sans); --t-data:500 12.5px/1.35 var(--mono); --t-label:500 11px/1 var(--mono);
+  /* — radii & motion — */
+  --r-xs:8px; --r-sm:12px; --r-md:16px; --r-lg:22px; --r-xl:30px; --r-pill:999px;
+  --ease:cubic-bezier(.2,.8,.2,1); --spring:cubic-bezier(.2,.9,.2,1.15); --t-fast:.15s; --t-med:.3s;
+  --wheel-w:290px; --top-h:84px; --ins-w:420px; --gap:24px; --dock-h:74px;
+}
+/* — theme: midnight (calmer aurora, for long sessions) — */
+html[data-theme="midnight"]{--au-pink:#5B4BFF;--au-amber:#3B6BFF;--au-mint:#1BA6A0;--grad-aurora:linear-gradient(110deg,#B7C4FF 0%,#A897FF 50%,#8FE3FF 100%)}
+html[data-theme="midnight"] .aurora{opacity:.4}
+/* — responsive token overrides — */
+@media (max-width:1599px){:root{--wheel-w:228px;--ins-w:360px;--top-h:78px}}
+@media (max-width:1100px){:root{--wheel-w:0px;--ins-w:0px;--gap:20px;--top-h:72px}}
+@media (max-width:640px){:root{--gap:14px;--top-h:64px;--t-h1:600 30px/1.05 var(--sans);--t-hero:600 34px/1.04 var(--sans)}}

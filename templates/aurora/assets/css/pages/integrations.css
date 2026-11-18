@@ -1,0 +1,42 @@
+/* JARVIS Aurora · by fls-dev · https://github.com/fls-dev */
+/* Integrations — orchestrator sphere wired to channels, tools, models and
+   file processors; the catalog is a star “sky”; Anthropic in the inspector. */
+.it{position:absolute;width:262px;height:48px;display:flex;align-items:center;gap:10px;padding:0 12px 0 8px;cursor:pointer;border-radius:14px}
+.it.flat{position:relative;width:auto;margin-bottom:6px}
+.it .lg{width:32px;height:32px;border-radius:10px;display:grid;place-items:center;font:700 12px/1 var(--sans);flex:none;box-shadow:inset 0 0 0 1px rgba(255,255,255,.2)}
+.it .nm2{font:500 14px/1.15 var(--sans);flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.it .nm2 small{display:block;font:500 10.5px/1 var(--mono);color:var(--ink-3);margin-top:4px}
+.it .c{font:500 12px/1 var(--mono);color:var(--ink-2)}
+.it .d{width:7px;height:7px;border-radius:50%;background:var(--ok);box-shadow:0 0 8px var(--ok);flex:none}
+.it .d.idle{background:transparent;border:1.5px solid var(--ink-3);box-shadow:none}
+.it.sel{border-color:rgba(168,151,255,.9);box-shadow:0 0 0 4px rgba(168,151,255,.16),0 0 30px -6px rgba(168,151,255,.6)}
+.proc{position:absolute;width:128px;height:40px;display:flex;align-items:center;gap:8px;padding:0 10px;font:500 12px/1 var(--mono);border-radius:12px}
+.proc.flat{position:relative;width:auto}
+.proc i{width:8px;height:8px;border-radius:2px;background:var(--tool);flex:none;box-shadow:0 0 8px var(--tool)}
+.lh{font:var(--t-label);letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);margin:18px 0 10px}
+.pgrid{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.catalog{margin-top:18px}
+.catalog .bar{display:flex;align-items:center;gap:8px;margin-bottom:10px;flex-wrap:wrap}
+.srch{height:46px;width:360px;max-width:100%;border-radius:var(--r-pill);display:flex;align-items:center;gap:10px;padding:0 10px 0 16px;color:var(--ink-3)}
+.srch input{flex:1;min-width:0;background:none;border:0;outline:0;color:var(--ink);font:500 14px/1 var(--sans)}
+.star{position:absolute;display:flex;align-items:center;gap:7px;transform:translate(-4px,-4px);cursor:pointer;white-space:nowrap}
+.star i{width:7px;height:7px;border-radius:50%;background:#fff;box-shadow:0 0 8px rgba(255,255,255,.7);flex:none;animation:tw 3s ease-in-out infinite}
+@keyframes tw{50%{opacity:.4}}
+.star span{font:500 12px/1 var(--sans);color:var(--ink-2)}
+.star.has i{background:var(--ok);box-shadow:0 0 0 3px rgba(88,230,166,.2),0 0 10px var(--ok)}
+.star.has span{color:var(--ink)}
+.star.mcp i{background:var(--tool);box-shadow:0 0 8px var(--tool)}
+.star.off{opacity:.12}.star.hit span{color:#fff;font-weight:600}
+.neb{position:absolute;font:var(--t-label);color:var(--ink-3);text-transform:uppercase;letter-spacing:.08em}
+.tip{position:absolute;width:250px;padding:12px 14px;border-radius:16px;z-index:3}
+.tip b{font:600 15px/1 var(--sans)}.tip p{font:500 11.5px/1.4 var(--mono);color:var(--ink-3);margin:6px 0 10px}
+.cl{display:flex;flex-wrap:wrap;gap:6px}.cl .chip{height:30px}.cl .chip i{width:7px;height:7px;border-radius:50%;background:#fff}.cl .chip.has i{background:var(--ok)}.cl .chip.mcp i{background:var(--tool)}.cl .chip.off{display:none}
+.mdl{display:flex;flex-direction:column;gap:6px}
+.mdl div{display:grid;grid-template-columns:1fr 62px 72px 38px;gap:6px;align-items:center;white-space:nowrap;font:500 12px/1 var(--mono);color:var(--ink-2);padding:8px 10px;border-radius:11px;background:rgba(255,255,255,.045)}
+.mdl b{color:var(--ink);font-weight:500;overflow:hidden;text-overflow:ellipsis}
+.rt{font:500 12.5px/1.55 var(--mono);color:var(--ink-2);padding:10px 12px;border-radius:12px;background:rgba(5,4,10,.4);border:1px dashed rgba(168,151,255,.4)}
+.rt em{font-style:normal;color:var(--ai)}
+@media (max-width:640px){
+ .catalog .seg{overflow-x:auto;max-width:100%;scrollbar-width:none}.srch{width:100%}
+ .mdl div{grid-template-columns:1fr 56px 64px 38px;font-size:11px}
+}

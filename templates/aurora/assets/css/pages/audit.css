@@ -1,0 +1,36 @@
+/* JARVIS Aurora · by fls-dev · https://github.com/fls-dev */
+/* Audit trail — hourly heat strip, facets, signed event timeline (new
+   events slide in live), payload diff + integrity in the inspector. */
+.heat{height:92px;border-radius:var(--r-lg);padding:14px 18px;display:flex;flex-direction:column}
+.heat .hh{display:flex;justify-content:space-between}
+.heat .bars{flex:1;display:flex;align-items:flex-end;gap:5px;margin-top:8px}
+.heat .bars i{flex:1;border-radius:3px 3px 1px 1px;background:linear-gradient(180deg,#B7A4FF,rgba(168,151,255,.25))}
+.heat .bars i.e{background:linear-gradient(180deg,#FF6B7A,rgba(255,107,122,.25))}
+.heat .bars i.now{background:#fff;box-shadow:0 0 12px #fff}
+.au{display:grid;grid-template-columns:220px minmax(0,1fr);gap:18px;margin-top:18px}
+.facets{border-radius:var(--r-lg);padding:16px;align-self:start}
+.facets .row{cursor:pointer}.facets .row i{width:8px;height:8px;border-radius:50%;flex:none}
+.feed{position:relative;height:calc(100vh - 340px);min-height:400px;overflow:hidden;-webkit-mask-image:linear-gradient(#000 85%,transparent);mask-image:linear-gradient(#000 85%,transparent)}
+.spine{position:absolute;left:78px;top:0;bottom:0;width:1px;background:linear-gradient(var(--hair-2),rgba(255,255,255,.04))}
+.day{position:relative;margin:4px 0 12px 98px;font:var(--t-label);letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
+.ev{position:relative;display:flex;align-items:flex-start;gap:12px;margin:0 0 10px;padding-left:98px}
+.ev .tm{position:absolute;left:0;top:14px;width:62px;text-align:right;font:500 11.5px/1 var(--mono);color:var(--ink-3)}
+.ev .pin{position:absolute;left:70px;top:10px;width:17px;height:17px;border-radius:50%;display:grid;place-items:center;background:var(--bg);border:1.5px solid currentColor}
+.ev .pin::after{content:"";width:7px;height:7px;border-radius:50%;background:currentColor;box-shadow:0 0 8px currentColor}
+.ev .card{flex:1;min-width:0;padding:11px 14px;border-radius:14px;display:flex;align-items:center;gap:12px}
+.ev .card .ic{width:30px;height:30px;border-radius:9px;display:grid;place-items:center;flex:none}
+.ev .card b{font:600 13.5px/1.2 var(--sans)}.ev .card p{font:500 11.5px/1.35 var(--mono);color:var(--ink-3);margin-top:4px}
+.ev .card .rt{margin-left:auto;display:flex;align-items:center;gap:8px;font:500 11.5px/1 var(--mono);color:var(--ink-2);white-space:nowrap}
+.ev.sel .card{border-color:rgba(168,151,255,.85);box-shadow:0 0 0 4px rgba(168,151,255,.14),0 0 26px -6px rgba(168,151,255,.5)}
+.ev.new{animation:evin .6s var(--spring)}@keyframes evin{from{opacity:0;transform:translateY(-10px)}}
+.diff{border-radius:14px;background:rgba(5,4,10,.55);border:1px solid var(--hair);padding:12px 14px;font:500 12px/1.65 var(--mono);color:var(--ink-2);white-space:pre-wrap}
+.diff .a{color:var(--ok)}.diff .d{color:var(--bad)}.diff .k{color:#B7A4FF}
+@media (max-width:1100px){.au{grid-template-columns:minmax(0,1fr)}.feed{height:auto;overflow:visible;-webkit-mask-image:none;mask-image:none}
+ .facets{padding:12px}.facets .rows{flex-direction:row;flex-wrap:wrap}.facets .row{padding:7px 10px}.facets .row .r{margin-left:6px}}
+@media (max-width:640px){
+ .heat .bars{gap:2px}
+ .spine{left:10px}.ev{padding-left:30px}.day{margin-left:30px}
+ .ev .tm{position:static;display:none}.ev .pin{left:2px}
+ .ev .card{display:grid;grid-template-columns:30px minmax(0,1fr);gap:6px 10px}.ev .card .rt{grid-column:2;margin-left:0}.ev .card .rt:empty{display:none}
+ .ev .card p::before{content:attr(data-t) " · ";color:var(--ink-2)}
+}

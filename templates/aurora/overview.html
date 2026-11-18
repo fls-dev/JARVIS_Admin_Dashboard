@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><defs><radialGradient id='g' cx='.38' cy='.32' r='.7'><stop offset='0' stop-color='%23fff'/><stop offset='.35' stop-color='%23FF4F93'/><stop offset='1' stop-color='%236D4AFF'/></radialGradient></defs><rect width='64' height='64' rx='16' fill='%2305060C'/><circle cx='32' cy='32' r='19' fill='url(%23g)'/></svg>">
+<meta name="author" content="fls-dev — https://github.com/fls-dev">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>JARVIS Aurora · Overview</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/tokens.css">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<link rel="stylesheet" href="assets/css/pages/overview.css">
+</head>
+<body data-page="overview">
+<main class="stage">
+ <div class="ov" id="ov">
+  <svg class="links" id="links" aria-hidden="true"></svg>
+  <section class="ov-hero">
+   <div class="orb hero-orb" id="orbBox"><canvas id="orb"></canvas><div class="orb-label"><b>Orchestrator</b><span>idle · 1 task running</span></div></div>
+   <div class="hero">
+    <div class="label">Wednesday · 18 Nov · Europe/Warsaw</div>
+    <h1>Good evening, Alex. <em class="grad">What’s next?</em></h1>
+    <p>1 task running · 4 completed · 1 failed today — the orchestrator is listening.</p>
+    <div class="ask g3" id="ask"><span class="ai" data-ico="spark"></span><div class="ask-in" id="typed"></div><span class="chip no-s" data-ico="cpu">qwen3-4b · local</span><button class="btn btn-pri btn-lg">Run <kbd>↵</kbd></button></div>
+    <div class="sugg"><span class="chip" data-ico="file">CVE report PDF</span><span class="chip" data-ico="search">Latency triage</span><span class="chip" data-ico="lock">Harden SSH</span><span class="chip" data-ico="sched">Schedule a backup</span></div>
+   </div>
+  </section>
+  <section class="ov-canvas">
+   <div class="label lbl">Live task canvas · 3 of 6 today</div>
+   <div class="scene no-s" id="scene"><div class="world" id="cv"><svg class="edges" id="ed"></svg></div></div>
+   <div class="vflow s-only" id="vf"></div>
+  </section>
+  <aside class="kpis" id="kpis"></aside>
+  <div class="ticker g3"><span class="badge b-ok">live</span><div class="tkw"><div class="tk" id="tk"></div></div></div>
+ </div>
+</main>
+<script src="assets/js/core.js"></script>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/theme.js"></script>
+<script src="assets/js/orb.js"></script>
+<script src="assets/js/canvas.js"></script>
+<script src="assets/js/nav.js"></script>
+<script src="assets/js/palette.js"></script>
+<script src="assets/js/inspector.js"></script>
+<script src="assets/js/shell.js"></script>
+<script src="assets/js/pages/overview.js"></script>
+</body>
+</html>

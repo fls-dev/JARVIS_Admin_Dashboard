@@ -1,0 +1,17 @@
+/* JARVIS Aurora · by fls-dev · https://github.com/fls-dev */
+/* Memory — constellation: Alex's core sphere, 5 cluster hubs, fact stars.
+   Mobile: the constellation stays pinch-zoomable, facts are listed below. */
+.mtools{display:flex;gap:8px;align-items:center;margin-bottom:6px;flex-wrap:wrap}
+.mtools .field{width:300px;max-width:100%;border-radius:999px;height:42px}
+.hub{position:absolute;transform:translate(-50%,-50%);width:92px;height:92px;border-radius:50%;display:grid;place-items:center;text-align:center;font:600 13px/1.15 var(--sans)}
+.hub small{display:block;font:500 10.5px/1 var(--mono);color:var(--ink-3);margin-top:4px}
+.fact{position:absolute;transform:translate(-50%,-50%);display:flex;align-items:center;gap:8px;padding:7px 11px 7px 8px;border-radius:var(--r-pill);font:500 12.5px/1.1 var(--sans);color:var(--ink);white-space:nowrap;cursor:pointer;transition:transform var(--t-med) var(--ease)}
+.fact:hover{transform:translate(-50%,-50%) scale(1.05)}
+.fact i,.fl i{width:9px;height:9px;border-radius:50%;flex:none}
+.fact.sel{border-color:rgba(168,151,255,.9);box-shadow:0 0 0 4px rgba(168,151,255,.18),0 0 30px rgba(168,151,255,.5)}
+.core{left:470px;top:275px;width:240px;height:240px}
+.legend{display:inline-flex;flex-wrap:wrap;gap:8px 16px;font:500 11.5px/1 var(--mono);color:var(--ink-3);padding:12px 16px;border-radius:var(--r-pill);margin-top:8px}
+.legend span{display:flex;align-items:center;gap:7px}.legend i{width:8px;height:8px;border-radius:50%}
+.prov{padding:12px 14px;border-radius:14px;background:rgba(5,4,10,.45);border:1px solid var(--hair);font:500 13px/1.5 var(--sans);color:var(--ink-2)}
+.fl{display:flex;flex-wrap:wrap;gap:6px}.fl .chip{height:32px}
+@media (max-width:640px){.legend{border-radius:18px}}

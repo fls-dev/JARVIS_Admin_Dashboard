@@ -1,0 +1,34 @@
+/* JARVIS Aurora · by fls-dev · https://github.com/fls-dev */
+/* Fine-tuning — pipeline canvas, training set, adapters & runs (empty state
+   and with runs: fine-tuning.html#runs), run config in the inspector. */
+.pn{width:232px;min-height:150px;padding:14px 16px}
+.vflow .pn{width:auto;min-height:0}
+.pn .ic{width:36px;height:36px;border-radius:11px;display:grid;place-items:center;flex:none}
+.pn .hd{display:flex;align-items:center;gap:10px}
+.pn .hd b{font:600 15px/1.1 var(--sans)}.pn .hd small{display:block;font:500 11px/1 var(--mono);color:var(--ink-3);margin-top:4px}
+.pn .ln{display:flex;justify-content:space-between;font:500 11.5px/1 var(--mono);color:var(--ink-3);margin-top:10px}.pn .ln b{color:var(--ink);font-weight:500}
+.substeps{display:flex;gap:6px;margin-top:12px}.substeps span{flex:1;text-align:center;padding:7px 0;border-radius:9px;font:500 11px/1 var(--mono);background:rgba(255,255,255,.05);color:var(--ink-3);border:1px dashed rgba(255,255,255,.14)}
+.substeps span.on{border:1px solid rgba(255,193,92,.6);color:var(--run);background:rgba(255,193,92,.08)}
+.mini-orb{position:absolute;right:10px;top:10px;width:64px;height:64px}
+.ftgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:18px}
+.pan{border-radius:var(--r-lg);padding:20px 22px;min-height:540px;display:flex;flex-direction:column}
+.kv4{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.kv4>div{padding:12px;border-radius:14px;background:rgba(255,255,255,.055);font:500 11px/1 var(--mono);color:var(--ink-3)}.kv4 b{display:block;font:600 21px/1 var(--sans);letter-spacing:-.03em;color:var(--ink);margin-bottom:7px}
+.qbar{display:flex;height:8px;border-radius:4px;overflow:hidden;gap:2px;margin-top:4px}
+.ex{margin-top:12px;padding:12px 14px;border-radius:14px;background:rgba(5,4,10,.45);border:1px solid var(--hair);font:500 12px/1.55 var(--mono);color:var(--ink-2)}
+.ex .r{color:var(--ai)}.ex .a{color:var(--ok)}
+.cfg{display:flex;flex-direction:column;gap:6px}
+.cfg .f{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 12px;border-radius:12px;background:rgba(255,255,255,.045);font:500 12.5px/1.2 var(--mono);color:var(--ink-3)}
+.cfg .f b{color:var(--ink);font-weight:500;text-align:right}
+.slider{height:4px;border-radius:2px;background:rgba(255,255,255,.1);position:relative;margin:4px 2px 2px}.slider u{position:absolute;left:0;top:0;bottom:0;border-radius:2px;background:linear-gradient(90deg,var(--au-violet),var(--au-pink))}.slider i{position:absolute;top:-6px;width:16px;height:16px;border-radius:50%;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.5);transform:translateX(-50%)}
+.runs .rw{display:grid;grid-template-columns:22px 1fr 110px 70px 96px;align-items:center;gap:10px;padding:11px 12px;border-radius:12px;background:rgba(255,255,255,.045);font:500 12.5px/1.2 var(--mono);color:var(--ink-2);margin-bottom:6px}
+.runs .rw b{color:var(--ink);font-weight:500}
+.loss{display:block;width:100%;height:150px}
+.runs .empty{flex:1}
+@media (max-width:1599px){.ftgrid{grid-template-columns:1fr}.pan{min-height:0}.runs .empty{padding:40px 0}}
+@media (min-width:900px) and (max-width:1100px){.ftgrid{grid-template-columns:1fr 1fr}}
+@media (max-width:640px){
+ .kv4{grid-template-columns:repeat(2,1fr)}
+ .pan{padding:16px}
+ .runs .rw{grid-template-columns:18px 1fr 64px;font-size:11.5px}.runs .rw>:nth-child(3),.runs .rw>:nth-child(4){display:none}
+}

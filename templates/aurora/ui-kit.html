@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><defs><radialGradient id='g' cx='.38' cy='.32' r='.7'><stop offset='0' stop-color='%23fff'/><stop offset='.35' stop-color='%23FF4F93'/><stop offset='1' stop-color='%236D4AFF'/></radialGradient></defs><rect width='64' height='64' rx='16' fill='%2305060C'/><circle cx='32' cy='32' r='19' fill='url(%23g)'/></svg>">
+<meta name="author" content="fls-dev — https://github.com/fls-dev">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>JARVIS Aurora · UI kit</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/tokens.css">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<link rel="stylesheet" href="assets/css/pages/ui-kit.css">
+</head>
+<body data-page="uikit">
+<main class="stage">
+ <header class="page-h"><h1>UI kit <em>aurora · glass</em></h1><p>tokens.css · base.css · components.css — every component and state used by the templates</p></header>
+ <div class="kit">
+   <section class="k g2"><h5>Aurora palette <span>--au-*</span></h5>
+    <div class="sw"><div style="background:#6D4AFF"><span>violet</span></div><div style="background:#FF4F93"><span>pink</span></div><div style="background:#FF9B45"><span>amber</span></div><div style="background:#22D3B0"><span>mint</span></div><div style="background:#4F7BFF"><span>blue</span></div></div>
+    <div class="sem"><span style="background:var(--ok)">ok</span><span style="background:var(--run)">run</span><span style="background:var(--bad)">bad</span><span style="background:var(--ai)">ai</span><span style="background:var(--tool)">tool</span><span style="background:var(--file)">file</span><span style="background:var(--idle)">idle</span></div>
+    <div class="gr" style="background:var(--grad-aurora)">--grad-aurora</div><div class="gr" style="background:linear-gradient(90deg,#7C5CFF,#FF5C9A,#FFA24C,#3BE8C8);color:#fff">--grad-core · conic</div></section>
+   <section class="k g2 ty"><h5>Type <span>Inter Tight · Geist Mono</span></h5>
+    <div><span style="font:var(--t-hero);font-size:46px;letter-spacing:-.045em">Hello, <em class="serif grad" style="font-size:52px">Jarvis</em></span><small>hero 60</small></div>
+    <div><span style="font:var(--t-h1);font-size:30px;letter-spacing:-.04em">Incidents &amp; spend</span><small>h1 40</small></div>
+    <div><span style="font:var(--t-h2)">CVE-2026-31337 report</span><small>h2 24</small></div>
+    <div><span style="font:var(--t-body);color:var(--ink-2)">Rotate TLS certificates on api.example.com — body 14</span><small>body</small></div>
+    <div><span style="font:var(--t-data)">$0.038394 · 2 140 tok · ×2</span><small>data mono</small></div>
+    <div><span class="label">Label · tag</span><small>label 11</small></div></section>
+   <section class="k g2"><h5>Glass levels <span>nav &amp; panels only</span></h5>
+    <div class="gl"><div class="g1" style="left:4%">g1 · thin<small>nodes, chips<br>blur 14</small></div><div class="g2" style="left:35%">g2 · regular<small>panels<br>blur 28</small></div><div class="g3" style="left:66%">g3 · thick<small>nav, ⌘K, sheets<br>blur 44</small></div></div></section>
+   <section class="k g2"><h5>Buttons <span>states</span></h5>
+    <div class="r"><button class="btn btn-pri">${PLUS}New task</button><button class="btn btn-pri h">Hover</button><button class="btn btn-pri a">Active</button><button class="btn btn-pri loading">Load</button><button class="btn btn-pri" disabled>Disabled</button></div>
+    <div class="r" style="margin-top:8px"><button class="btn btn-glass">Glass</button><button class="btn btn-glass h">Hover</button><button class="btn btn-glass loading">Load</button><button class="btn btn-ghost">Ghost</button><button class="btn btn-danger">Remove</button></div>
+    <div class="r" style="margin-top:8px"><button class="btn btn-pri btn-sm">Small</button><button class="btn btn-glass btn-sm">Run <kbd>↵</kbd></button><button class="icon-btn g1">${BELL}</button><button class="btn btn-pri btn-lg">Large ${SEND}</button></div></section>
+   <section class="k g2"><h5>Inputs <span>states</span></h5>
+    <div class="field">${SEARCH}<input placeholder="Search integrations…"></div>
+    <div class="field focus" style="margin-top:8px">${KEY}<input value="sk-ant-api03-••••••••••7Q2"><kbd>⌘V</kbd></div>
+    <div class="field error" style="margin-top:8px">${CLOCK}<input value="0 9 * * * *" style="font-family:var(--mono)"></div><div class="field-msg">Cron must have 5 fields — try “0 9 * * *”</div>
+    <div class="cap">BIG PROMPT · ask</div><div class="ask g3" style="height:60px"><span style="width:34px;height:34px;border-radius:50%;background:var(--grad-core);display:grid;place-items:center;flex:none;color:#fff">${SPARK}</span><div class="ask-in" style="font-size:15px">Diagnose DNS failures<span class="caret"></span></div><button class="btn btn-pri">Run</button></div></section>
+   <section class="k g2"><h5>Toggles · segmented</h5>
+    <div class="r"><span class="toggle on"></span><span class="toggle"></span><span class="toggle on" style="opacity:.4"></span><div class="seg g3"><button class="on">Day</button><button>Week</button><button>Month<small>30</small></button></div></div></section>
+   <section class="k g2" ><h5>Canvas · nodes &amp; edges <span>5 states</span></h5>
+    <div class="kcanvas" id="kc"><svg class="edges" id="ke" style="position:absolute;inset:0;width:100%;height:100%;overflow:visible"></svg>
+     <div class="node ok" id="k1" style="left:0;top:0"><div class="nt"><span>scan_hosts</span><span class="badge b-ok">ok</span></div><div class="nm"><span>$0.004102</span><span>2.1s</span></div></div>
+     <div class="node run sel" id="k2" style="left:186px;top:0"><div class="nt"><span>issue_certs</span><span class="attempt">×1</span></div><div class="nm"><span>running</span><span>3/5</span></div><div class="bar"><i></i></div></div>
+     <div class="node bad" id="k3" style="left:0;top:118px"><div class="nt"><span>patch_coredns</span></div><div class="nm"><span style="color:var(--bad)">HTTP 403</span></div></div>
+     <div class="node queued" id="k4" style="left:186px;top:118px"><div class="nt"><span>deploy_certs</span></div><div class="nm"><span>queued</span></div></div>
+     <div class="node file" id="k5" style="left:186px;top:196px;width:150px;padding:9px 12px"><div class="nt"><span>${FILE} report.pdf</span></div></div>
+    </div>
+    <div class="cap" style="margin-top:56px">ORB CORE · energy 1 → 2.6 while typing / speaking</div>
+    <div style="display:flex;gap:10px"><div class="orb" style="position:relative;width:110px;height:110px"><canvas id="o1"></canvas></div><div class="orb" style="position:relative;width:110px;height:110px"><canvas id="o2"></canvas></div><div style="align-self:center;font:500 11px/1.5 var(--mono);color:var(--ink-3)">idle<br>→ generating</div></div>
+<div class="cap" style="margin-top:14px">EDGES</div><div class="rows"><div class="row"><svg width="60" height="8"><path class="flow" d="M0 4H60" stroke="#58E6A6" stroke-width="1.6"/></svg>active · flowing dashes<span class="r">.flow</span></div><div class="row"><svg width="60" height="8"><path d="M0 4H60" stroke="#FF6B7A" stroke-opacity=".6" stroke-dasharray="2 6" stroke-width="1.6"/></svg>failed / queued<span class="r">dash</span></div><div class="row"><svg width="60" height="8"><path d="M0 4H60" stroke="#A897FF" stroke-opacity=".2" stroke-width="7"/><path d="M0 4H60" stroke="#A897FF" stroke-width="1.6"/></svg>selected · glow<span class="r">glow</span></div></div></section>
+   <section class="k g2"><h5>⌘K palette <span>results · empty</span></h5>
+    <div class="pal-s g3"><div class="pal-in">${SEARCH}<span style="color:var(--ink)">fine</span><span class="caret"></span><kbd style="margin-left:auto">esc</kbd></div>
+     <div class="pr sel">${FT}Go to Fine-tuning<kbd>G 5</kbd></div><div class="pr">${PLAY}Start fine-tuning run<kbd>↵</kbd></div></div>
+    <div class="pal-s g3" style="margin-top:8px"><div class="pal-in">${SEARCH}<span style="color:var(--ink)">zzz</span></div><div style="padding:14px;text-align:center;font:500 12.5px var(--sans);color:var(--ink-3)">No matches — press ↵ to ask Jarvis</div></div></section>
+   <section class="k g2"><h5>Toasts</h5><div style="display:flex;flex-direction:column;gap:8px" id="tst"></div></section>
+   <section class="k g2"><h5>Loading · empty · error</h5>
+    <div style="display:flex;gap:10px;align-items:center"><div ><div class="skeleton" style="height:12px;width:80%"></div><div class="skeleton" style="height:12px;width:55%;margin-top:8px"></div><div class="skeleton" style="height:32px;margin-top:10px"></div></div>
+    <div class="empty" style="flex:1;gap:6px"><div class="ring" style="width:52px;height:52px">${FT}</div><b style="color:var(--ink);font:600 13px var(--sans)">No training run yet</b></div></div>
+    <div class="row err" style="margin-top:10px;border:1px solid;color:var(--bad)">${ALERT}<b style="color:var(--bad)">Brave Search · 429</b><span class="r"><button class="btn btn-danger btn-sm">Retry</button></span></div></section>
+   <section class="k g2" ><h5>Wheel navigation <span>scroll · 1–9</span></h5><div class="mini-wheel" id="mw"></div></section>
+   <section class="k g2"><h5>Status badges · chips</h5>
+    <div class="r"><span class="badge b-ok">done</span><span class="badge b-run">running</span><span class="badge b-bad">failed</span><span class="badge b-ai">approved</span><span class="badge b-tool">output</span><span class="badge b-idle">idle</span></div>
+    <div class="r" style="margin-top:10px"><span class="chip">${COST}<b>$0.084881</b></span><span class="chip">${CPU}qwen3-4b · local</span><span class="attempt">×2</span></div></section>
+ </div>
+<footer class="by"><span>JARVIS Aurora</span> · by <a href="https://github.com/fls-dev" target="_blank" rel="noopener">fls-dev</a></footer>
+</main>
+<script src="assets/js/core.js"></script>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/theme.js"></script>
+<script src="assets/js/orb.js"></script>
+<script src="assets/js/canvas.js"></script>
+<script src="assets/js/nav.js"></script>
+<script src="assets/js/palette.js"></script>
+<script src="assets/js/inspector.js"></script>
+<script src="assets/js/shell.js"></script>
+<script src="assets/js/pages/ui-kit.js"></script>
+</body>
+</html>

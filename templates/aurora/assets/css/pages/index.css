@@ -1,0 +1,17 @@
+/* JARVIS Aurora · by fls-dev · https://github.com/fls-dev */
+/* Templates hub — preview cards for every template. */
+.hubtop{display:flex;align-items:center;gap:24px}
+.intro{flex:1;min-width:0}
+.lead{font:500 15px/1.55 var(--sans);color:var(--ink-2);max-width:760px}
+.intro .r{display:flex;gap:8px;margin-top:16px;flex-wrap:wrap}
+.hub-orb{position:relative;flex:none;width:300px;height:300px;margin:-40px 0 -30px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;margin-top:28px}
+.card{border-radius:20px;padding:8px 8px 12px;display:block;transition:transform var(--t-med) var(--ease),box-shadow var(--t-med)}
+.card:hover{transform:translateY(-4px);box-shadow:0 0 0 1px rgba(168,151,255,.7),0 20px 50px -10px rgba(124,92,255,.6)}
+.card .th{position:relative;width:100%;aspect-ratio:16/9;border-radius:13px;overflow:hidden;background:#0E0D15}
+.card .th img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.card .cp{display:flex;align-items:center;gap:8px;margin:10px 6px 0}
+.card .cp b{font:600 14px/1 var(--sans)}.card .cp span{margin-left:auto;font:500 11px/1 var(--mono);color:var(--ink-3)}
+.card small{display:block;margin:6px 6px 0;font:500 11.5px/1.35 var(--mono);color:var(--ink-3)}
+@media (max-width:1100px){.hub-orb{width:220px;height:220px;margin:0}}
+@media (max-width:640px){.hubtop{flex-direction:column-reverse;align-items:stretch}.hub-orb{align-self:center;width:180px;height:180px;margin:-10px 0 -20px}}

@@ -1,0 +1,32 @@
+/* JARVIS Aurora · by fls-dev · https://github.com/fls-dev */
+/* Tasks — task analytics: revisions · plan/steps canvas · result inspector */
+.cmeta,.trail{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+.trail{margin-top:10px}
+.trail .chip{cursor:pointer}.trail .chip.on{background:rgba(255,255,255,.92);color:#0B0A12;border-color:transparent}.trail .chip.on b{color:#0B0A12}
+.trail .chip i{width:7px;height:7px;border-radius:50%}
+.tk{display:grid;grid-template-columns:356px minmax(0,1fr);grid-template-areas:"revs flow";gap:20px;align-items:start}
+.revs{grid-area:revs;border-radius:var(--r-lg);padding:18px;display:flex;flex-direction:column;min-height:790px}
+.flowbox{grid-area:flow}
+.spend{margin-top:auto;padding-top:18px}
+.sbar{display:flex;height:10px;border-radius:5px;overflow:hidden;gap:2px}
+.dt{width:8px;height:8px;border-radius:50%}
+.rv{position:relative;padding:0 0 16px 26px}
+.rv::before{content:"";position:absolute;left:6px;top:16px;bottom:-2px;width:1px;background:linear-gradient(var(--hair-2),transparent)}
+.rv:last-child::before{display:none}
+.rv .d{position:absolute;left:0;top:3px;width:13px;height:13px;border-radius:50%;border:2px solid var(--ai);background:var(--bg)}
+.rv.me .d{border-color:#fff}.rv.fin .d{background:var(--grad-core);border:0}
+.rv .h{display:flex;gap:8px;align-items:center;font:500 11px/1 var(--mono);color:var(--ink-3)}
+.rv .h b{color:var(--ink);font-weight:600}
+.rv .b{margin-top:8px;padding:10px 12px;border-radius:12px;background:rgba(255,255,255,.05);font:500 13px/1.45 var(--sans);color:var(--ink-2)}
+.rv.me .b{background:rgba(168,151,255,.1);color:var(--ink)}
+.rv .b del{color:var(--ink-4)}.rv .b ins{text-decoration:none;color:var(--ok)}
+.sn{width:300px}
+.vflow .sn{width:auto}
+.sn .meta{display:flex;gap:6px;margin-top:10px;flex-wrap:wrap}
+.sn .meta span{font:500 10.5px/1 var(--mono);color:var(--ink-3);padding:5px 7px;border-radius:6px;background:rgba(255,255,255,.05)}
+.share{height:3px;border-radius:2px;background:rgba(255,255,255,.07);margin-top:10px}.share u{display:block;height:100%;border-radius:2px;background:var(--grad-aurora)}
+.code{border-radius:14px;background:rgba(5,4,10,.55);border:1px solid var(--hair);padding:14px 16px;font:500 12px/1.62 var(--mono);color:var(--ink-2);white-space:pre-wrap;flex:1;min-height:0;overflow:auto}
+.code .k{color:#B7A4FF}.code .s{color:#FFC48A}.code .n{color:#58E6A6}.code .p{color:var(--ink-4)}
+.files .row .fi{width:28px;height:28px;border-radius:8px;display:grid;place-items:center;flex:none}
+@media (max-width:1599px){.tk{grid-template-columns:minmax(0,1fr);grid-template-areas:"flow" "revs"}.revs{min-height:0}}
+@media (max-width:640px){.tk{grid-template-areas:"revs" "flow"}.trail{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;margin-right:calc(var(--gap)*-1)}.trail .chip{flex:none}}

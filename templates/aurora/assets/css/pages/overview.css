@@ -1,0 +1,68 @@
+/* JARVIS Aurora · by fls-dev · https://github.com/fls-dev */
+/* Overview — sphere + big prompt, live task canvas, KPI column */
+.ov{position:relative;display:grid;grid-template-columns:minmax(0,1fr) 300px;grid-template-areas:"hero kpi" "canvas kpi" "ticker kpi";grid-template-rows:auto auto 1fr;gap:18px 24px}
+.links{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;overflow:visible;z-index:1}
+.ov-hero{grid-area:hero;display:flex;align-items:center;gap:20px;position:relative;z-index:2}
+.hero-orb{position:relative;flex:none;width:400px;height:400px;margin:-24px 0 -24px -10px}
+.hero-orb .orb-label{top:auto;bottom:6px;transform:translateX(-50%)}
+.hero{flex:1;min-width:0}
+.hero h1{font:600 52px/1.04 var(--sans);letter-spacing:-.045em;margin-top:14px}
+.hero h1 em{font:italic 400 60px/1 var(--serif);letter-spacing:-.01em}
+.hero p{margin-top:12px;color:var(--ink-2);font-size:15px}
+.hero .ask{margin-top:24px;height:72px}
+.ask .ai{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;color:#fff;background:var(--grad-core);flex:none;box-shadow:0 0 18px rgba(124,92,255,.6)}
+.sugg{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap}
+.ov-canvas{grid-area:canvas;position:relative;z-index:2}
+.lbl{margin-bottom:10px}
+.kpis{grid-area:kpi;display:flex;flex-direction:column;gap:14px;position:relative;z-index:2}
+.kpi{padding:18px 20px;border-radius:var(--r-lg)}
+.kpi .big{font:600 38px/1 var(--sans);letter-spacing:-.04em;margin-top:12px}
+.kpi .big small{font:500 15px/1 var(--mono);color:var(--ink-3);margin-left:6px;letter-spacing:0}
+.kpi .sub{font:500 11.5px/1.3 var(--mono);color:var(--ink-3);margin-top:8px}
+.kpi svg.spark{display:block;margin-top:12px;width:100%;height:60px}
+.split{display:flex;gap:6px;margin-top:14px}.split div{flex:1;padding:9px 10px;border-radius:12px;background:rgba(255,255,255,.05);font:500 10.5px/1 var(--mono);color:var(--ink-3)}.split b{display:block;font:600 18px/1 var(--sans);margin-bottom:6px}
+.mb{display:flex;align-items:center;gap:10px;font:500 11.5px/1 var(--mono);color:var(--ink-2);margin-top:9px}.mb span:first-child{width:118px;flex:none}.mb i{flex:1;height:5px;border-radius:3px;background:rgba(255,255,255,.07);overflow:hidden}.mb i u{display:block;height:100%;border-radius:3px}
+.kpi.grow{flex:1}
+.tg{position:absolute;width:404px;height:322px}
+.tg .head{left:0;top:0;width:404px}
+.tg .head .t{font:500 14px/1.35 var(--sans);color:var(--ink);margin-top:9px;height:38px;overflow:hidden}
+.tg .st{width:122px;padding:10px 11px}.tg .st .nt{font-size:11.5px}
+.tg .out{left:0;top:236px;width:404px;display:flex;align-items:center;gap:10px}
+.fi{width:30px;height:30px;border-radius:9px;display:grid;place-items:center;flex:none}
+.ticker{grid-area:ticker;align-self:end;height:46px;border-radius:var(--r-pill);display:flex;align-items:center;gap:14px;padding:0 8px 0 10px;overflow:hidden;font:500 12px/1 var(--mono);color:var(--ink-3);white-space:nowrap;position:relative;z-index:2}
+.ticker b{color:var(--ink);font-weight:500}.ticker .badge{flex:none}
+.tkw{flex:1;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent);mask-image:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent)}
+.tk{display:flex;gap:28px;width:max-content;animation:tick 40s linear infinite}
+@keyframes tick{to{transform:translateX(-50%)}}
+/* vertical flow (mobile) */
+.vflow .head .t{font:500 14px/1.35 var(--sans);margin-top:8px}
+.vflow .out{display:flex;align-items:center;gap:10px}
+/* L */
+@media (max-width:1599px){
+ .ov{grid-template-columns:minmax(0,1fr);grid-template-areas:"hero" "kpi" "canvas" "ticker";grid-template-rows:auto}
+ .hero-orb{width:320px;height:320px}
+ .hero h1{font-size:44px}.hero h1 em{font-size:50px}
+ .kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
+ .kpi.grow{flex:none}
+}
+/* M */
+@media (max-width:1100px){
+ .hero-orb{width:250px;height:250px;margin:-10px 0}
+ .hero h1{font-size:38px}.hero h1 em{font-size:43px}
+ .hero .ask{height:64px}
+}
+@media (max-width:900px){.kpis{grid-template-columns:repeat(2,minmax(0,1fr))}.ov-hero{flex-direction:column;align-items:stretch}.hero-orb{align-self:center}}
+/* S */
+@media (max-width:640px){
+ .links{display:none}
+ .ov{gap:14px}
+ .hero-orb{width:210px;height:210px;margin:-6px auto -8px}
+ .hero h1{font-size:32px}.hero h1 em{font-size:36px;display:inline-block}
+ .hero p{font-size:13.5px}
+ .hero .ask{height:58px;padding:8px 8px 8px 12px;border-radius:22px;gap:8px}.ask .ai{width:32px;height:32px}
+ .ask .ask-in{font-size:14.5px}.hero .ask .btn-lg{height:42px;padding:0 14px;font-size:13.5px}.hero .ask kbd{display:none}
+ .sugg{flex-wrap:nowrap;overflow-x:auto;margin-right:calc(var(--gap)*-1);scrollbar-width:none}.sugg .chip{flex:none}
+ .kpi{padding:14px}.kpi .big{font-size:28px}.mb span:first-child{width:140px}
+ .split{gap:4px}.split div{padding:8px 6px;font-size:9.5px}.split b{font-size:16px}
+ .kpis .kpi:nth-child(3),.kpis .kpi:nth-child(4){grid-column:span 2}
+}

@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><defs><radialGradient id='g' cx='.38' cy='.32' r='.7'><stop offset='0' stop-color='%23fff'/><stop offset='.35' stop-color='%23FF4F93'/><stop offset='1' stop-color='%236D4AFF'/></radialGradient></defs><rect width='64' height='64' rx='16' fill='%2305060C'/><circle cx='32' cy='32' r='19' fill='url(%23g)'/></svg>">
+<meta name="author" content="fls-dev — https://github.com/fls-dev">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>JARVIS Aurora · Scheduled work</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/tokens.css">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<link rel="stylesheet" href="assets/css/pages/scheduled.css">
+</head>
+<body data-page="sched">
+<main class="stage">
+ <header class="page-h"><h1>Scheduled work <em>orbit of a day</em></h1><p><b>7</b> routines · <b>11</b> runs in the next 24h · Europe/Warsaw</p></header>
+ <div class="sc">
+  <div class="side" id="side"></div>
+  <div class="dialwrap">
+   <div class="scene" id="scene"><div class="world"><svg id="dial" width="880" height="880"></svg><div class="orb ccore"><canvas id="orb"></canvas></div><div id="jobs"></div></div></div>
+   <div class="s-only" id="jlist"></div>
+  </div>
+ </div>
+</main>
+<aside class="inspector g3" id="ins"></aside>
+<script src="assets/js/core.js"></script>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/theme.js"></script>
+<script src="assets/js/orb.js"></script>
+<script src="assets/js/canvas.js"></script>
+<script src="assets/js/nav.js"></script>
+<script src="assets/js/palette.js"></script>
+<script src="assets/js/inspector.js"></script>
+<script src="assets/js/shell.js"></script>
+<script src="assets/js/pages/scheduled.js"></script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+/* JARVIS Aurora · by fls-dev · https://github.com/fls-dev */
+/* UI kit — the design system on one page: palette, type, glass, controls,
+   badges, canvas nodes/edges, orb, palette, toasts, states, wheel. */
+.kit{columns:4 340px;column-gap:14px}
+.k{border-radius:var(--r-lg);padding:16px 18px;break-inside:avoid;margin-bottom:14px;display:block}
+.k h5{font:var(--t-label);letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);margin-bottom:12px;display:flex;justify-content:space-between}
+.sw{display:grid;grid-template-columns:repeat(5,1fr);gap:6px}.sw div{height:46px;border-radius:12px;position:relative}.sw span{position:absolute;left:6px;bottom:5px;font:500 9.5px/1 var(--mono);color:rgba(255,255,255,.9)}
+.sem{display:flex;gap:6px;margin-top:8px}.sem span{flex:1;height:26px;border-radius:8px;font:500 9.5px/26px var(--mono);text-align:center;color:#0B0A12}
+.gr{height:30px;border-radius:10px;margin-top:8px;display:flex;align-items:center;padding-left:10px;font:500 10.5px/1 var(--mono);color:#0B0A12}
+.ty>div{display:flex;align-items:baseline;justify-content:space-between;gap:10px;border-bottom:1px solid var(--hair);padding:7px 0}.ty>div:last-child{border:0}
+.ty small{font:500 10px/1 var(--mono);color:var(--ink-4);white-space:nowrap}
+.gl{position:relative;height:150px;border-radius:16px;overflow:hidden;background:radial-gradient(circle at 25% 40%,#6D4AFF,transparent 55%),radial-gradient(circle at 75% 60%,#FF4F93,transparent 55%),radial-gradient(circle at 55% 100%,#FF9B45,transparent 50%),#120f1c}
+.gl>div{position:absolute;top:22px;bottom:22px;width:30%;border-radius:14px;display:flex;flex-direction:column;justify-content:flex-end;padding:10px;font:600 13px/1 var(--sans)}.gl small{font:500 10px/1.3 var(--mono);color:var(--ink-2);margin-top:4px}
+.r{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.cap{font:500 10px/1 var(--mono);color:var(--ink-4);margin:10px 0 6px}
+.btn-pri.h{box-shadow:0 0 0 1px #fff,0 12px 34px -6px rgba(190,160,255,1)}.btn-glass.h{background:rgba(255,255,255,.14)}.btn.a{transform:scale(.97);filter:brightness(.92)}
+.kcanvas{position:relative;height:200px}
+.kcanvas .node{width:150px}
+.pal-s{border-radius:22px;padding:8px}
+.pal-s .pal-in{display:flex;align-items:center;gap:10px;padding:8px 10px 12px;border-bottom:1px solid var(--hair-2);color:var(--ink-3);font:500 15px/1 var(--sans)}
+.pal-s .pr{display:flex;align-items:center;gap:12px;padding:9px 10px;border-radius:12px;color:var(--ink-2);font:500 13.5px/1 var(--sans)}.pal-s .pr.sel{background:rgba(255,255,255,.1);color:var(--ink)}.pal-s .pr kbd{margin-left:auto}
+.mini-wheel{position:relative;height:150px;overflow:hidden;border-radius:14px;background:rgba(0,0,0,.2)}
+
+@media (max-width:640px){.kit{columns:1}.gl>div{width:31%}}
