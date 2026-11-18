@@ -177,7 +177,7 @@ html.rm .sat-labels, html.no-gl .sat-labels{ display:none; }
 /* ── SCHEDULED ── */
 .tl-win{ padding-bottom:var(--s-4); }
 .tl-scroll{ overflow-x:auto; margin:0 calc(var(--s-5) * -1); padding:0 var(--s-5); scrollbar-width:thin; }
-.tl{ position:relative; min-width:1100px; height:290px; }
+.tl{ position:relative; min-width:1100px; height:298px; }
 .tl-axis{ position:absolute; left:0; right:0; bottom:24px; height:1px; background:linear-gradient(90deg, transparent, rgba(139,233,255,.5) 10%, rgba(255,179,107,.5) 90%, transparent); }
 .tl-axis span{ position:absolute; bottom:0; } .tl-axis i{ position:absolute; left:0; bottom:-4px; width:1px; height:8px; background:rgba(255,255,255,.3); }
 .tl-axis b{ position:absolute; top:12px; left:0; translate:-50% 0; font-size:.65rem; color:var(--fg-3); font-weight:400; white-space:nowrap; }
