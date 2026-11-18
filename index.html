@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><defs><radialGradient id='g' cx='.38' cy='.32' r='.7'><stop offset='0' stop-color='%23fff'/><stop offset='.35' stop-color='%238BE9FF'/><stop offset='1' stop-color='%236D4AFF'/></radialGradient></defs><rect width='64' height='64' rx='16' fill='%2305060C'/><circle cx='32' cy='32' r='19' fill='url(%23g)'/></svg>">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>JARVIS Admin Dashboard · Aurora &amp; Orbital templates</title>
+<meta name="description" content="Two open-source admin dashboard templates for an AI agent: JARVIS Aurora (glass sphere and living canvas) and JARVIS Orbital (spatial three.js planet). Plain HTML, CSS and JS, no build step.">
+<meta name="author" content="fls-dev — https://github.com/fls-dev">
+<meta name="theme-color" content="#05060C">
+<meta property="og:title" content="JARVIS Admin Dashboard">
+<meta property="og:description" content="Two futuristic admin templates for an AI agent: Aurora and Orbital. HTML, CSS and JS, no build step.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://fls-dev.github.io/JARVIS_Admin_Dashboard/docs/social-preview.png">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+@font-face{font-family:"Sora";src:url("templates/orbital/assets/fonts/Sora-200-700-latin.woff2") format("woff2");font-weight:200 700;font-display:swap}
+:root{--bg:#05060C;--ink:#EEF0FF;--ink-2:rgba(238,240,255,.72);--ink-3:rgba(238,240,255,.5);--line:rgba(255,255,255,.12);
+ --violet:#6D4AFF;--pink:#FF4F93;--amber:#FFB36B;--ice:#8BE9FF;--r:22px;
+ --mono:ui-monospace,"SF Mono","Geist Mono","IBM Plex Mono",Menlo,Consolas,monospace;color-scheme:dark}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{min-height:100vh;background:var(--bg);color:var(--ink);font:300 16px/1.55 "Sora",system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit}
+.sky{position:fixed;inset:0;z-index:-1;pointer-events:none;background:
+ radial-gradient(60% 55% at 12% 105%,rgba(109,74,255,.45),transparent 60%),
+ radial-gradient(45% 45% at 38% 115%,rgba(255,79,147,.28),transparent 60%),
+ radial-gradient(55% 60% at 92% 108%,rgba(255,179,107,.28),transparent 60%),
+ radial-gradient(40% 40% at 85% -5%,rgba(139,233,255,.18),transparent 60%)}
+.sky::after{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:44px 44px;-webkit-mask-image:radial-gradient(70% 60% at 50% 30%,#000,transparent);mask-image:radial-gradient(70% 60% at 50% 30%,#000,transparent)}
+.wrap{width:min(1240px,100% - 48px);margin:0 auto}
+header.top{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:24px 0}
+.brand{display:flex;align-items:center;gap:10px;font-weight:600;letter-spacing:.02em;text-decoration:none}
+.dot{width:22px;height:22px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff,var(--ice) 30%,var(--violet) 70%,transparent 72%);box-shadow:0 0 18px rgba(139,233,255,.6)}
+.top nav{display:flex;gap:8px;flex-wrap:wrap}
+.pill{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 18px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.05);text-decoration:none;font:500 14px/1 "Sora",system-ui,sans-serif;transition:background .2s,border-color .2s}
+.pill:hover{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.24)}
+.pill:focus-visible,.card a:focus-visible{outline:2px solid var(--ice);outline-offset:3px}
+.pill.pri{background:#fff;color:#0A0B12;border-color:transparent}
+.pill.pri:hover{background:#e9ecff}
+.hero{padding:72px 0 56px;text-align:center}
+.kicker{font:500 12px/1 var(--mono);letter-spacing:.24em;text-transform:uppercase;color:var(--ice)}
+h1{font-weight:200;font-size:clamp(44px,8vw,104px);line-height:.96;letter-spacing:-.035em;margin:22px 0 0}
+h1 b{font-weight:600;background:linear-gradient(90deg,#B49BFF,#FF7FB0 45%,var(--amber));-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{max-width:680px;margin:26px auto 0;color:var(--ink-2);font-size:clamp(16px,1.6vw,19px)}
+.chips{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-top:28px}
+.chips span{font:500 12px/1 var(--mono);padding:9px 13px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.04);color:var(--ink-2)}
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:28px;padding-bottom:40px}
+.card{position:relative;border-radius:var(--r);border:1px solid var(--line);background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));-webkit-backdrop-filter:blur(24px);backdrop-filter:blur(24px);overflow:hidden;display:flex;flex-direction:column;transition:transform .35s cubic-bezier(.2,.8,.2,1),border-color .3s,box-shadow .35s}
+.card:hover{transform:translateY(-4px);border-color:rgba(255,255,255,.24);box-shadow:0 30px 80px rgba(0,0,0,.45)}
+.card.a:hover{box-shadow:0 30px 90px rgba(109,74,255,.25)}
+.card.o:hover{box-shadow:0 30px 90px rgba(139,233,255,.18)}
+.shot{display:block;aspect-ratio:4/3;overflow:hidden;border-bottom:1px solid var(--line)}
+.shot img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+.card:hover .shot img{transform:scale(1.03)}
+.body{padding:26px 28px 28px;display:flex;flex-direction:column;gap:14px;flex:1}
+.card h2{margin:0;font-weight:300;font-size:32px;letter-spacing:-.02em}
+.card h2 em{font-style:normal;font-weight:600}
+.card.a h2 em{background:linear-gradient(90deg,#B49BFF,#FF7FB0);-webkit-background-clip:text;background-clip:text;color:transparent}
+.card.o h2 em{color:var(--ice)}
+.card p{margin:0;color:var(--ink-2)}
+.meta{display:flex;flex-wrap:wrap;gap:6px}
+.meta span{font:500 11.5px/1 var(--mono);padding:7px 10px;border-radius:8px;background:rgba(255,255,255,.06);color:var(--ink-2)}
+.act{display:flex;gap:8px;flex-wrap:wrap;margin-top:auto;padding-top:6px}
+.note{text-align:center;color:var(--ink-3);font:500 12px/1.6 var(--mono);padding:8px 0 24px}
+footer{border-top:1px solid var(--line);padding:28px 0 40px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;color:var(--ink-3);font-size:14px}
+footer a{color:var(--ink-2)}
+@media (max-width:860px){.cards{grid-template-columns:1fr}.hero{padding:40px 0 36px}.top nav .pill:not(.pri){display:none}}
+@media (max-width:420px){.wrap{width:calc(100% - 32px)}.body{padding:22px 20px 22px}.card h2{font-size:28px}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;animation:none!important}.card:hover{transform:none}.card:hover .shot img{transform:none}}
+</style>
+</head>
+<body>
+<div class="sky" aria-hidden="true"></div>
+<div class="wrap">
+  <header class="top">
+    <a class="brand" href="./"><span class="dot" aria-hidden="true"></span>JARVIS</a>
+    <nav aria-label="Links">
+      <a class="pill" href="https://github.com/fls-dev/JARVIS_Admin_Dashboard">Source on GitHub</a>
+      <a class="pill" href="https://github.com/fls-dev/JARVIS_Admin_Dashboard/issues/new/choose">Leave feedback</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="kicker">Open-source admin templates</div>
+      <h1>JARVIS<br><b>Admin Dashboard</b></h1>
+      <p class="lead">Two futuristic admin dashboards for an AI agent that runs your infrastructure. Pick a world and open the live demo.</p>
+      <div class="chips"><span>HTML · CSS · Vanilla JS</span><span>No build step</span><span>Responsive 390 → 1920 px</span><span>Reduced motion</span><span>MIT</span></div>
+    </section>
+
+    <section class="cards" aria-label="Templates">
+      <article class="card a">
+        <a class="shot" href="templates/aurora/index.html" tabindex="-1" aria-hidden="true"><img src="docs/assets/aurora-cover.jpg" alt="" width="1600" height="1200" loading="eager"></a>
+        <div class="body">
+          <h2>JARVIS <em>Aurora</em></h2>
+          <p>A glass sphere orchestrates a living canvas of task nodes with flowing edges, set on a soft aurora glow. Orbit-wheel menu, slide-out inspector and a ⌘K palette.</p>
+          <div class="meta"><span>10 pages</span><span>Canvas 2D</span><span>2 themes</span><span>Google Fonts</span></div>
+          <div class="act"><a class="pill pri" href="templates/aurora/index.html">Open Aurora →</a><a class="pill" href="templates/aurora/overview.html">Overview</a><a class="pill" href="templates/aurora/ui-kit.html">UI kit</a></div>
+        </div>
+      </article>
+      <article class="card o">
+        <a class="shot" href="templates/orbital/index.html" tabindex="-1" aria-hidden="true"><img src="docs/assets/orbital-cover.jpg" alt="" width="1600" height="1200" loading="eager"></a>
+        <div class="body">
+          <h2>JARVIS <em>Orbital</em></h2>
+          <p>A spatial command deck: nine rooms orbit a living three.js planet, every page is a set of glass windows in a twilight sky, and every jump is a camera flight.</p>
+          <div class="meta"><span>11 pages</span><span>three.js · WebGL</span><span>CSS fallback</span><span>Works offline</span></div>
+          <div class="act"><a class="pill pri" href="templates/orbital/index.html">Open Orbital →</a><a class="pill" href="templates/orbital/overview.html">Overview</a><a class="pill" href="templates/orbital/ui-kit.html">UI kit</a></div>
+        </div>
+      </article>
+    </section>
+    <p class="note">All names, hosts, IDs and numbers in the demos are fictional.</p>
+  </main>
+
+  <footer>
+    <span>Designed and built by <a href="https://github.com/fls-dev">fls-dev</a> · MIT License</span>
+    <span><a href="https://github.com/fls-dev/JARVIS_Admin_Dashboard/discussions">Discussions</a> · <a href="https://github.com/fls-dev/JARVIS_Admin_Dashboard/issues">Issues</a></span>
+  </footer>
+</div>
+</body>
+</html>
