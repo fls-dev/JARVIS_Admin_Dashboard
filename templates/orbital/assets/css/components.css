@@ -56,6 +56,7 @@
 .portal-l{ font-size:.8125rem; font-weight:500; white-space:nowrap; }
 .portal-c{ font-family:var(--f-mono); font-size:.625rem; color:var(--fg-3); }
 .portal:hover .portal-orb, .portal:focus-visible .portal-orb, .portal.is-hot .portal-orb{ transform:scale(1.14) translateY(-4px); box-shadow:var(--glass-hi), 0 0 0 1px var(--ice-line), 0 0 34px rgba(139,233,255,.45); }
+.portal:focus-visible{ outline:none; }
 .portal:hover, .portal.is-hot{ color:var(--fg); }
 .portal[aria-current="page"] .portal-orb{ background:radial-gradient(circle at 35% 25%, #E4FAFF, #6FD8FF 40%, #1E3A86 80%); color:#04121A; box-shadow:0 0 0 1px var(--ice), 0 0 40px rgba(139,233,255,.6); }
 .portal[aria-current="page"] .portal-l{ color:var(--ice); }
