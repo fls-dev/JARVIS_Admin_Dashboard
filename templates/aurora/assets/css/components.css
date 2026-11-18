@@ -152,7 +152,7 @@ kbd{font:500 11px/1 var(--mono);padding:4px 6px;border-radius:6px;background:rgb
 .zoom button{width:32px;height:32px;border-radius:50%;display:grid;place-items:center;color:var(--ink-2);font:600 15px/1 var(--sans)}
 .zoom button:hover{background:rgba(255,255,255,.1);color:var(--ink)}
 .scene:hover .zoom,.scene.touch .zoom{display:flex}
-.scene-hint{position:absolute;left:12px;bottom:12px;z-index:5;font:var(--t-label);letter-spacing:.06em;text-transform:uppercase;color:var(--ink-4);display:none}
+.scene-hint{position:absolute;left:12px;bottom:12px;z-index:5;font:var(--t-label);letter-spacing:.06em;text-transform:uppercase;color:var(--ink-4);display:none;max-width:calc(100% - 150px);line-height:1.4}
 .scene.touch .scene-hint{display:block}
 
 /* — vertical flow: simplified canvas for narrow screens — */
